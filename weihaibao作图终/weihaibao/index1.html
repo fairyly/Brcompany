@@ -1,0 +1,839 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/cropper.min.css">
+<link rel="stylesheet" href="css/jquery.range.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/cropper.min.js"></script>
+<script src="js/jquery.range.js"></script>
+<script src="js/touch.min.js"></script>
+<script>
+    $(document).bind('mobileinit',function(){  //放在中间
+        $.mobile.changePage.defaults.changeHash = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+    });
+</script>
+<script type="text/javascript">
+					//图片等比例缩小处理
+					function AutoResizeImage(maxWidth,maxHeight,objImg){
+							var img = new Image();
+							img.src = objImg.src;
+							var hRatio;
+							var wRatio;
+							var Ratio = 1;
+							var w = img.width;
+							var h = img.height;
+							wRatio = maxWidth / w;
+							hRatio = maxHeight / h;
+							if (maxWidth ==0 && maxHeight==0){
+							    Ratio = 1;
+							    }
+							    else if (maxWidth==0){//
+							        if (hRatio<1) Ratio = hRatio;
+							           }else if (maxHeight==0){
+							                 if (wRatio<1) Ratio = wRatio;
+							                 }else if (wRatio<1 || hRatio<1){
+							                       Ratio = (wRatio<=hRatio?wRatio:hRatio);
+							                        }
+							if (Ratio<1){
+								w = w * Ratio;
+								h = h * Ratio;
+							    }
+							objImg.height = h;
+							objImg.width = w;
+					}
+					</script>
+<!-- <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
+</head>
+<body>
+	<div class="header">
+		<nav>
+			<div class="nav">
+				<ul>
+					<li style="width:28%"><a href="javascript:history.back(-1)">返回</a></li>
+					<li style="width:45%"><a href="">微商海报</a></li>
+					<li style="width:22%"><a href="index1.html">首页</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+    <!-- 头部结束 -->
+	<div class="container">
+		<article>
+			<div class="picview">
+				<!-- <img class="uppic" src=""> -->
+					<img class="uppic" src="images/uupic.gif" border="0" width="0" height="0" onload="AutoResizeImage(360,538,this)"/>
+					
+					<div class="wenzixianshi1" id="target">
+						<div class="delwenzi">x</div>
+						<!-- contenteditable="true" -->
+						<div class="wzxs"></div>
+					</div>
+					<div class="wenzixianshi2" id="target2">
+						<div class="delwenzi2">x</div>
+						<!-- 可以选择加入contenteditable="true"直接编辑 -->
+						<div class="wzxs2"></div>
+					</div>
+					<div class="picxianshi1" id="ptarget1">
+						<div class="delpic1">x</div>
+						<div class="picxs1"><img style="width:70px;height:70px" src=""/></div>
+					</div>
+					<div class="picxianshi2" id="ptarget2">
+						<div class="delpic2">x</div>
+						<div class="picxs2"><img style="width:70px;height:70px" src=""/></div>
+					</div>
+					<div class="picxianshi3" id="ptarget3">
+						<div class="delpic3">x</div>
+						<div class="picxs3"><img style="width:70px;height:70px" src=""/></div>
+					</div>
+					<div class="picxianshi4" id="ptarget4">
+						<div class="delpic4">x</div>
+						<div class="picxs4"><img style="width:70px;height:70px" src=""/></div>
+					</div>
+			</div>
+			
+			<div class="btnfunction">
+
+				<div class="indexbtn" >
+					<p style="width:100%;height:30px;"></p>
+					<div class="edit">
+						<img src="images/edit.gif" style="width:50px;height:35px"  class="btnedit"/>
+						<p style="padding-top:2px;font-size:16px">编辑</p>
+					</div><div class="effect">
+						<img src="images/edit.gif" style="width:50px;height:35px" class="btneffc"/>
+						<p style="padding-top:2px;font-size:16px">特效</p>
+					</div><div class="text">
+						<img src="images/edit.gif" style="width:50px;height:35px" class="btnwd"/>
+						<p style="padding-top:2px;font-size:16px">文字</p>
+					</div><div class="paster">
+						<img src="images/edit.gif" style="width:50px;height:35px" class="btnpas"/>
+						<p style="padding-top:2px;font-size:16px">贴纸</p>
+					</div>
+				</div>
+				<!-- 首页选项结束 -->
+				<div class="jiancai" style="display:none;z-index:200">
+					<div class="cut">
+						<ul>
+							<li><div class="ziyou"></div><span style="color:#e4007f">自由</span></li><li><div class="ziyou1"></div><span>1:1</span></li><li><div class="ziyou2"></div><span>2:3</span></li><li><div class="ziyou3"></div><span>3:2</span></li><li><div class="ziyou4"></div><span>3:4</span></li><li><div class="ziyou5"></div><span>4:3</span></li><li><div class="ziyou6"></div><span>16:9</span></li>
+						</ul>
+					</div>
+					 <p style="width:100%;height:20px;"></p>
+					<div class="rote" style="display:none">
+						<div class="demo" style="width:320px; margin:0px auto;">
+					    <input type="hidden" class="single-slider" value="0" />
+					</div>
+					<script>
+						$(function(){
+							$('.single-slider').jRange({
+								from: -180,
+								to: 180,
+								step: 1,
+								scale: [-180,-90,0,90,180],
+								format: '%s',
+								width: 300,
+								showLabels: true,
+								showScale: true
+							});
+							$(".queren2").click(function(){
+                                var aa = $(".single-slider").val();
+								console.log(aa);
+								 $(".uppic").cropper("rotate",aa);
+								 // $(".uppic").cropper("clear");
+								 // $(".uppic").cropper("destroy");
+							});
+								
+						});
+						</script>
+					</div>
+					<div class="xuanzhuan"><span class="sanjiao1"></span><span class="sanjiao2" style="display:none"></span><div class="jian"><img src="images/cut.png"/><p>剪裁</p></div><div class="xuan"><img src="images/zhuan.png"/><p>旋转</p></div><div class="queren">确认剪裁</div><div class="queren2" style="display:none">确认旋转</div></div>
+				</div>
+				<!-- 点击编辑后剪裁旋转结束 -->
+
+				<div class="selwenzi" style="display:none;">
+					<p style="width:100%;height:35px;"></p>
+					<div class="del" style="display:inline-block;vertical-align:middle;margin:0px 10px;font-size:29px;color:#ffffff">X</div><div class="ziti1" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="zi1">字体字体字体</div><p style="font-size:10px;color:#ffffff">字体1</p>
+					</div><div class="ziti2" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="zi2"><p style="margin-top:32%;width:72px">字体字体字体字体字体字体</p></div><p style="font-size:10px;color:#ffffff">字体2</p>
+					</div><div class="ziti3" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="zi3"><p class="p3">字体字体</p></div><p style="font-size:10px;color:#ffffff">字体3</p>
+					</div><div class="ziti4" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="zi4"><p class="p4" style="height:70px">字体字体字体字体</p></div><p style="font-size:10px;color:#ffffff">字体4</p>
+					</div>
+				</div>
+				<!-- 选择文字结束 -->
+				<div class="tianjiawenzi" style="display:none">
+					 <div class="wordbtn">
+					     <input type="button" class="neirong" value="内容"/><input type="button" class="yangshi" value="效果"/>
+					</div>
+					<p style="width:100%;height:30px;"></p>
+					<div class="neironginput">
+						<input type="text" class="nrinput" value="文字效果"/>
+					</div>
+					<div class="slecyangshi" style="display:none;text-align:center">
+						<ul>
+							<li style="background-color:#ffffff"></li>
+							<li style="background-color:#000000"></li>
+							<li style="background-color:#ff0000"></li>
+							<li style="background-color:#ffff00"></li>
+							<li style="background-color:#00ff00"></li>
+							<li style="background-color:#0000ff"></li>
+				        </ul>
+					</div>
+					<p style="width:100%;height:20px;"></p>
+					<div class="selcet">
+						<span class="duihao" style="float:left;margin-left:10px;color:#ffffff;height:30px;font-size:20px">√</span>
+						<span class="quxiao" style="float:right;margin-right:10px;color:#ffffff;height:30px;font-size:20px">X</span>
+					</div>
+					<script type="text/javascript">
+					     $(function(){
+					     	$(".neirong").click(function(){
+					     		$(".neirong").css("background-color","#323232");
+					     		$(".yangshi").css("background-color","#000000");
+					     		console.log("shuru");
+					     		$(".neironginput").show();
+					     		$(".slecyangshi").hide();
+					     	});
+					     	$(".yangshi").click(function(){
+					     		$(".yangshi").css("background-color","#323232");
+					     		$(".neirong").css("background-color","#000000");
+					     		console.log("shuru");
+					     		$(".neironginput").hide();
+					     		$(".slecyangshi").show();
+					     	});
+					     })
+					</script>
+				</div>
+				<div class="tianjiawenzi2" style="display:none">
+					 <div class="wordbtn">
+					     <input type="button" class="neirong" value="内容"/><input type="button" class="yangshi" value="效果"/>
+					</div>
+					<p style="width:100%;height:30px;"></p>
+					<div class="neironginput2">
+						<input type="text" class="nrinput2" value="文字效果2"/>
+					</div>
+					<div class="slecyangshi2" style="display:none;text-align:center">
+						<ul>
+							<li style="background-color:#ffffff"></li>
+							<li style="background-color:#000000"></li>
+							<li style="background-color:#ff0000"></li>
+							<li style="background-color:#ffff00"></li>
+							<li style="background-color:#00ff00"></li>
+							<li style="background-color:#0000ff"></li>
+				        </ul>
+					</div>
+					<p style="width:100%;height:20px;"></p>
+					<div class="selcet">
+						<span class="duihao2" style="float:left;margin-left:10px;color:#ffffff;height:30px;font-size:20px">√</span>
+						<span class="quxiao2" style="float:right;margin-right:10px;color:#ffffff;height:30px;font-size:20px">X</span>
+					</div>
+					<script type="text/javascript">
+					     $(function(){
+					     	$(".neirong").click(function(){
+					     		$(".neirong").css("background-color","#323232");
+					     		$(".yangshi").css("background-color","#000000");
+					     		console.log("shuru");
+					     		$(".neironginput2").show();
+					     		$(".slecyangshi2").hide();
+					     	});
+					     	$(".yangshi").click(function(){
+					     		$(".yangshi").css("background-color","#323232");
+					     		$(".neirong").css("background-color","#000000");
+					     		console.log("shuru");
+					     		$(".neironginput2").hide();
+					     		$(".slecyangshi2").show();
+					     	});
+					     })
+					</script>
+				</div>
+				<!-- 添加文字结束 -->
+				<div class="tiezhi" style="display:none;">
+					<p style="width:100%;height:15px;"></p>
+					<div class="deltie" style="display:inline-block;vertical-align:middle;margin:0px 10px;font-size:29px;color:#ffffff">X</div>
+					<div class="tiezhi1" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="tie1"><img src="images/p1.png" style="width:70px;height:70px"></div>
+						<p style="font-size:10px;color:#ffffff;padding-top:5px;">猴子</p>
+					</div><div class="tiezhi2" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="tie1"><img src="images/p2.png" style="width:70px;height:70px"></div>
+						<p style="font-size:10px;color:#ffffff;padding-top:5px;">印章</p>
+					</div><div class="tiezhi3" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="tie1"><img src="images/p3.png" style="width:70px;height:70px"></div>
+						<p style="font-size:10px;color:#ffffff;padding-top:5px;">帽子</p>
+					</div><div class="tiezhi4" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="tie1"><img src="images/p4.png" style="width:70px;height:70px"></div>
+						<p style="font-size:10px;color:#ffffff;padding-top:5px;">眼镜</p>
+					</div>
+				</div>
+				<!-- 添加贴纸结束 -->
+			</div>
+            
+			<!-- <div class="selcet">
+				
+			</div> -->
+	    </article>
+	</div>
+     <!-- 主体部分结束 -->
+	<div class="footer">
+		<footer>
+			<div class="build"><span><a href="">生成</span></a></div>
+		</footer>
+	</div>
+
+<script type="text/javascript">
+	$(function(){
+	// 	 var urlinfo=window.location.href; //获取当前页面的url 
+	// 	var len=urlinfo.length;//获取url的长度 
+	// 	var offset=urlinfo.indexOf("?");//设置参数字符串开始的位置 
+	// 	var newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串 
+	// 	var newsids=newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割 
+	// 	var newsid=newsids[1];//得到参数值 
+		
+ //        console.log(newsid);
+ //        $(".uppic").attr("src",newsid);
+        // $(".uppic").css("width","360px");
+        // $(".uppic").css("height","480px");
+      //   $(".picview").click(function(){
+      //   	var $picW= $(".uppic").css("width");
+		    // var $picH= $(".uppic").css("height");
+		    // console.log($picW);
+		    // console.log($picH);
+      //   });
+
+		$(".edit").one("click",function(){
+			$(".indexbtn").hide();
+	        $(".jiancai").show();
+	        $(".jian").click(function(){
+	        	$(".uppic").cropper({
+				  aspectRatio: NaN,
+				  crop: function(data) {
+				    console.log(Math.round(data.x));
+				    console.log(Math.round(data.y));
+				    console.log(Math.round(data.width));
+				    console.log(Math.round(data.height));
+				    console.log(Math.round(data.rotate));
+				    console.log(Math.round(data.scaleX));
+				    console.log(Math.round(data.scaleY));
+				    }
+				});
+	        });
+			 
+			 $(".ziyou").click(function(){
+				 	$(".uppic").cropper("setAspectRatio", NaN);
+				}); 	
+			  $(".ziyou1").click(function(){
+				 	$(".uppic").cropper("setAspectRatio", 1/1);
+			   });
+			   $(".ziyou2").click(function(){
+				 	$(".uppic").cropper("setAspectRatio", 2/3);
+	           });
+	           $(".ziyou3").click(function(){
+				 	$(".uppic").cropper("setAspectRatio", 3/2);
+	           });
+	           $(".ziyou4").click(function(){
+				 	$(".uppic").cropper("setAspectRatio", 3/4);
+	           });
+	           $(".ziyou5").click(function(){
+				 	$(".uppic").cropper("setAspectRatio", 4/3);
+	           });
+	           $(".ziyou6").click(function(){
+				 	$(".uppic").cropper("setAspectRatio", 16/9);
+	           });
+	           $(".queren").click(function(){
+	           	    var durl=$(".uppic").cropper("getCroppedCanvas");
+	           	    var $dat=$(".uppic").cropper("getData");
+	           	    var imgurl=durl.toDataURL("image/png",1.0);
+	           	    console.log(durl);
+	           	    console.log(imgurl);
+	           	    console.log($dat);
+	           	    $(".uppic").attr("src",imgurl);
+	           	    $(".jiancai").hide();
+				    $(".jxuanzhuan").hide();
+				    $(".indexbtn").show();
+				    $(".uppic").cropper("destroy");
+				    // $(".uppic").cropper("clear");
+	           });
+				$(".xuan").click(function(){
+					$(".cut").hide();
+					$(".sanjiao1").hide();
+					$(".queren").hide();
+					$(".rote").show();
+		            $(".sanjiao2").show();
+		            $(".queren2").show();
+				});
+				$(".jian").click(function(){
+					$(".cut").show();
+					$(".sanjiao1").show();
+					$(".queren").show();
+					$(".rote").hide();
+		            $(".sanjiao2").hide();
+		            $(".queren2").hide();
+				});
+        });
+        //编辑结束
+		$(".text").click(function(){
+			$(".indexbtn").hide();
+			$(".selwenzi").show();
+			$(".del").click(function(){
+				$(".selwenzi").hide();
+				$(".tianjiawenzi").hide();
+				$(".delwenzi").hide();
+				$(".wenzixianshi1").css("border","none");
+				$(".delwenzi2").hide();
+				$(".tianjiawenzi2").hide();
+				$(".wenzixianshi2").css("border","none");
+				$(".indexbtn").show();
+			  });
+			$(".ziti1").click(function(){
+				$(".wenzixianshi1").show();
+				// var $z1=$(".ziti1").text();
+				// console.log($z1);
+				$(".wzxs").text("我是字体效果1");
+                // $(".delwenzi").show();
+			});
+			$(".delwenzi").click(function(){
+				$(".wenzixianshi1").hide();
+				// $(".tianjiawenzi").hide();
+				// $(".selwenzi").show();
+			});
+			$(".wzxs").click(function(){
+				$(".indexbtn").hide();
+				$(".selwenzi").hide();
+				$(".tianjiawenzi").show();
+				$(".tianjiawenzi2").hide();
+				$(".delwenzi").show();
+				$(".wenzixianshi1").show();
+				$(".wenzixianshi1").css("border","1px solid red");
+				
+				$(".duihao").click(function(){
+				  var $wz=$(".nrinput").val();
+                   $(".wzxs").html($wz);
+                   $(".wenzixianshi1").css("border","none");
+                   $(".delwenzi").hide();
+                   $(".tianjiawenzi").hide();
+					$(".selwenzi").show();
+				});
+				$(".quxiao").click(function(){
+					$(".tianjiawenzi").hide();
+					$(".wenzixianshi1").hide();
+					$(".selwenzi").show();
+				});
+				$(".yangshi").click(function(){
+		     		$(".yangshi").css("background-color","#323232");
+		     		$(".neirong").css("background-color","#000000");
+		     		console.log("shuru");
+		     		$(".neironginput").hide();
+		     		$(".slecyangshi").show();
+		     		$(".slecyangshi li:eq(0)").click(function(){
+					    $(".wzxs").css("color","#ffffff");
+					});
+					$(".slecyangshi li:eq(1)").click(function(){
+						$(".wzxs").css("color","#000000");
+					});
+					$(".slecyangshi li:eq(2)").click(function(){
+					    $(".wzxs").css("color","#ff0000");
+					});
+					$(".slecyangshi li:eq(3)").click(function(){
+						$(".wzxs").css("color","#ffff00");
+					});
+					$(".slecyangshi li:eq(4)").click(function(){
+					    $(".wzxs").css("color","#00ff00");
+					});
+					$(".slecyangshi li:eq(5)").click(function(){
+						$(".wzxs").css("color","#0000ff");
+					});
+		     	});	
+			});
+            //文字1结束
+            $(".ziti3").click(function(){
+                $(".wenzixianshi2").show();
+                $(".wzxs2").text("我是字体效果3");
+			});
+			$(".delwenzi2").click(function(){
+				$(".wenzixianshi2").hide();
+				// $(".tianjiawenzi").hide();
+				$(".selwenzi").show();
+			});
+			$(".wzxs2").click(function(){
+				$(".indexbtn").hide();
+				$(".selwenzi").hide();
+				$(".tianjiawenzi").hide();
+				$(".tianjiawenzi2").show();
+				$(".delwenzi2").show();
+				$(".wenzixianshi2").show();
+				$(".wenzixianshi2").css("border","1px solid red");
+				
+				$(".duihao2").click(function(){
+				  var $wz=$(".nrinput2").val();
+                   $(".wzxs2").html($wz);
+                   $(".wenzixianshi2").css("border","none");
+                   $(".delwenzi2").hide();
+                   $(".tianjiawenzi2").hide();
+					$(".selwenzi").show();
+				});
+				$(".quxiao2").click(function(){
+					$(".tianjiawenzi2").hide();
+					$(".wenzixianshi2").hide();
+					$(".selwenzi").show();
+				});
+				$(".yangshi").click(function(){
+		     		$(".yangshi").css("background-color","#323232");
+		     		$(".neirong").css("background-color","#000000");
+		     		console.log("shuru");
+		     		$(".neironginput2").hide();
+		     		$(".slecyangshi2").show();
+		     		$(".slecyangshi2 li:eq(0)").click(function(){
+					    $(".wzxs2").css("color","#ffffff");
+					});
+					$(".slecyangshi2 li:eq(1)").click(function(){
+						$(".wzxs2").css("color","#000000");
+					});
+					$(".slecyangshi2 li:eq(2)").click(function(){
+					    $(".wzxs2").css("color","#ff0000");
+					});
+					$(".slecyangshi2 li:eq(3)").click(function(){
+						$(".wzxs2").css("color","#ffff00");
+					});
+					$(".slecyangshi2 li:eq(4)").click(function(){
+					    $(".wzxs2").css("color","#00ff00");
+					});
+					$(".slecyangshi2 li:eq(5)").click(function(){
+						$(".wzxs2").css("color","#0000ff");
+					});
+		     	});	
+			});
+           //文字2结束
+		});
+        //文字结束
+        $(".paster").click(function(){
+            $(".indexbtn").hide();
+			$(".tiezhi").show(); 
+			$(".deltie").click(function(){
+				$(".tiezhi").hide();
+				$(".indexbtn").show();
+				$(".picxianshi1").css("border","none");
+				$(".delpic1").hide();
+				$(".picxianshi2").css("border","none");
+				$(".delpic2").hide();
+				$(".picxianshi3").css("border","none");
+				$(".delpic3").hide();
+				$(".picxianshi4").css("border","none");
+				$(".delpic4").hide();
+			});
+			$(".tiezhi1").click(function(){
+				var $isrc=$(".tiezhi1 img").attr("src");
+				console.log($isrc);
+				$(".picxs1 img").attr("src",$isrc);
+				$(".picxianshi1").show();
+				$(".picxs1").click(function(){
+					$(".picxianshi1").css("border","1px solid red");
+					$(".delpic1").show();
+				});
+				$(".delpic1").click(function(){
+                     $(".picxianshi1").hide();
+				});
+			});
+			$(".tiezhi2").click(function(){
+				var $isrc=$(".tiezhi2 img").attr("src");
+				console.log($isrc);
+				$(".picxs2 img").attr("src",$isrc);
+				$(".picxianshi2").show();
+				$(".picxs2").click(function(){
+					$(".picxianshi2").css("border","1px solid red");
+					$(".delpic2").show();
+				});
+				$(".delpic2").click(function(){
+                     $(".picxianshi2").hide();
+				});
+			});
+			$(".tiezhi3").click(function(){
+				var $isrc=$(".tiezhi3 img").attr("src");
+				console.log($isrc);
+				$(".picxs3 img").attr("src",$isrc);
+				$(".picxianshi3").show();
+				$(".picxs3").click(function(){
+					$(".picxianshi3").css("border","1px solid red");
+					$(".delpic3").show();
+				});
+				$(".delpic3").click(function(){
+                     $(".picxianshi3").hide();
+				});
+			});
+			$(".tiezhi4").click(function(){
+				var $isrc=$(".tiezhi4 img").attr("src");
+				console.log($isrc);
+				$(".picxs4 img").attr("src",$isrc);
+				$(".picxianshi4").show();
+				$(".picxs4").click(function(){
+					$(".picxianshi4").css("border","1px solid red");
+					$(".delpic4").show();
+				});
+				$(".delpic4").click(function(){
+                     $(".picxianshi4").hide();
+				});
+			});
+        });
+        //贴纸添加结束
+	});
+</script>
+
+</body>
+</html>
+<!-- 对添加文字图层绑定touch事件自由拖动 -->
+    <script type="text/javascript">
+		// 获取节点
+	  var block = document.getElementById("target");
+	  var oW,oH;
+	  // 绑定touchstart事件
+	  block.addEventListener("touchstart", function(e) {
+	   console.log(e);
+	   var touches = e.touches[0];
+	   oW = touches.clientX - block.offsetLeft;
+	   oH = touches.clientY - block.offsetTop;
+	   //阻止页面的滑动默认事件
+	   document.addEventListener("touchmove",defaultEvent,false);
+	  },false)
+	 
+	  block.addEventListener("touchmove", function(e) {
+	   var touches = e.touches[0];
+	   var oLeft = touches.clientX - oW;
+	   var oTop = touches.clientY - oH;
+	   if(oLeft < 0) {
+	    oLeft = 0;
+	   }else if(oLeft > document.documentElement.clientWidth - block.offsetWidth) {
+	    oLeft = (document.documentElement.clientWidth - block.offsetWidth);
+	   }
+	   block.style.left = oLeft + "px";
+	   block.style.top = oTop + "px";
+	  },false);
+	   
+	  block.addEventListener("touchend",function() {
+	   document.removeEventListener("touchmove",defaultEvent,false);
+	  },false);
+	  function defaultEvent(e) {
+	   e.preventDefault();
+	  }
+	</script>
+	<script type="text/javascript">
+		// 获取节点
+	  var block2 = document.getElementById("target2");
+	  var oW2,oH2;
+	  // 绑定touchstart事件
+	  block2.addEventListener("touchstart", function(e) {
+	   console.log(e);
+	   var touches = e.touches[0];
+	   oW2 = touches.clientX - block2.offsetLeft;
+	   oH2 = touches.clientY - block2.offsetTop;
+	   //阻止页面的滑动默认事件
+	   document.addEventListener("touchmove",defaultEvent,false);
+	  },false)
+	 
+	  block2.addEventListener("touchmove", function(e) {
+	   var touches = e.touches[0];
+	   var oLeft = touches.clientX - oW2;
+	   var oTop = touches.clientY - oH2;
+	   if(oLeft < 0) {
+	    oLeft = 0;
+	   }else if(oLeft > document.documentElement.clientWidth - block.offsetWidth) {
+	    oLeft = (document.documentElement.clientWidth - block.offsetWidth);
+	   }
+	   block2.style.left = oLeft + "px";
+	   block2.style.top = oTop + "px";
+	  },false);
+	   
+	  block2.addEventListener("touchend",function() {
+	   document.removeEventListener("touchmove",defaultEvent,false);
+	  },false);
+	  function defaultEvent(e) {
+	   e.preventDefault();
+	  }
+	</script>
+	<!-- 监听手势 -->
+	<script type="text/javascript">
+			var target = document.getElementById("ptarget1");
+			target.style.webkitTransition = 'all ease 0.05s';
+
+			touch.on('#ptarget1', 'touchstart', function(ev){
+				ev.preventDefault();
+			});
+
+			var initialScale = 1;
+			var currentScale;
+
+			touch.on('#ptarget1', 'pinchend', function(ev){
+				currentScale = ev.scale - 1;
+				currentScale = initialScale + currentScale;
+				currentScale = currentScale > 2 ? 2 : currentScale;
+				currentScale = currentScale < 1 ? 1 : currentScale;
+				this.style.webkitTransform = 'scale(' + currentScale + ')';
+				log("当前缩放比例为:" + currentScale + ".");
+			});
+
+			touch.on('#ptarget1', 'pinchend', function(ev){
+				initialScale = currentScale;
+			});
+	</script>
+	<script type="text/javascript">
+			var target = document.getElementById("ptarget2");
+			target.style.webkitTransition = 'all ease 0.05s';
+			
+			touch.on('#ptarget2', 'touchstart', function(ev){
+				ev.preventDefault();
+			});
+
+			var initialScale = 1;
+			var currentScale;
+
+			touch.on('#ptarget2', 'pinchend', function(ev){
+				currentScale = ev.scale - 1;
+				currentScale = initialScale + currentScale;
+				currentScale = currentScale > 2 ? 2 : currentScale;
+				currentScale = currentScale < 1 ? 1 : currentScale;
+				this.style.webkitTransform = 'scale(' + currentScale + ')';
+				log("当前缩放比例为:" + currentScale + ".");
+			});
+
+			touch.on('#ptarget2', 'pinchend', function(ev){
+				initialScale = currentScale;
+			});
+	</script>
+	<!-- 对图片绑定touch事件 -->
+	  <script type="text/javascript">
+		// 获取节点
+	  var blockpic1 = document.getElementById("ptarget1");
+	  var oWp1,oHp1;
+	  // 绑定touchstart事件
+	  blockpic1.addEventListener("touchstart", function(e) {
+	   console.log(e);
+	   var touches = e.touches[0];
+	   oWp1 = touches.clientX - blockpic1.offsetLeft;
+	   oHp1 = touches.clientY - blockpic1.offsetTop;
+	   //阻止页面的滑动默认事件
+	   document.addEventListener("touchmove",defaultEvent,false);
+	  },false)
+	 
+	  blockpic1.addEventListener("touchmove", function(e) {
+	   var touches = e.touches[0];
+	   var oLeft = touches.clientX - oWp1;
+	   var oTop = touches.clientY - oHp1;
+	   if(oLeft < 0) {
+	    oLeft = 0;
+	   }else if(oLeft > document.documentElement.clientWidth - blockpic1.offsetWidth) {
+	    oLeft = (document.documentElement.clientWidth - blockpic1.offsetWidth);
+	   }
+	   blockpic1.style.left = oLeft + "px";
+	   blockpic1.style.top = oTop + "px";
+	  },false);
+	   
+	  blockpic1.addEventListener("touchend",function() {
+	   document.removeEventListener("touchmove",defaultEvent,false);
+	  },false);
+	  function defaultEvent(e) {
+	   e.preventDefault();
+	  }
+	</script>
+	  <script type="text/javascript">
+		// 获取节点
+	  var blockpic2 = document.getElementById("ptarget2");
+	  var oWp2,oHp2;
+	  // 绑定touchstart事件
+	  blockpic2.addEventListener("touchstart", function(e) {
+	   console.log(e);
+	   var touches = e.touches[0];
+	   oWp2 = touches.clientX - blockpic2.offsetLeft;
+	   oHp2 = touches.clientY - blockpic2.offsetTop;
+	   //阻止页面的滑动默认事件
+	   document.addEventListener("touchmove",defaultEvent,false);
+	  },false)
+	 
+	  blockpic2.addEventListener("touchmove", function(e) {
+	   var touches = e.touches[0];
+	   var oLeft = touches.clientX - oWp2;
+	   var oTop = touches.clientY - oHp2;
+	   if(oLeft < 0) {
+	    oLeft = 0;
+	   }else if(oLeft > document.documentElement.clientWidth - blockpic2.offsetWidth) {
+	    oLeft = (document.documentElement.clientWidth - blockpic2.offsetWidth);
+	   }
+	   blockpic2.style.left = oLeft + "px";
+	   blockpic2.style.top = oTop + "px";
+	  },false);
+	   
+	  blockpic2.addEventListener("touchend",function() {
+	   document.removeEventListener("touchmove",defaultEvent,false);
+	  },false);
+	  function defaultEvent(e) {
+	   e.preventDefault();
+	  }
+	</script>
+	<script type="text/javascript">
+		// 获取节点
+	  var blockpic3 = document.getElementById("ptarget3");
+	  var oWp3,oHp3;
+	  // 绑定touchstart事件
+	  blockpic3.addEventListener("touchstart", function(e) {
+	   console.log(e);
+	   var touches = e.touches[0];
+	   oWp3 = touches.clientX - blockpic3.offsetLeft;
+	   oHp3 = touches.clientY - blockpic3.offsetTop;
+	   //阻止页面的滑动默认事件
+	   document.addEventListener("touchmove",defaultEvent,false);
+	  },false)
+	 
+	  blockpic3.addEventListener("touchmove", function(e) {
+	   var touches = e.touches[0];
+	   var oLeft = touches.clientX - oWp3;
+	   var oTop = touches.clientY - oHp3;
+	   if(oLeft < 0) {
+	    oLeft = 0;
+	   }else if(oLeft > document.documentElement.clientWidth - blockpic3.offsetWidth) {
+	    oLeft = (document.documentElement.clientWidth - blockpic3.offsetWidth);
+	   }
+	   blockpic3.style.left = oLeft + "px";
+	   blockpic3.style.top = oTop + "px";
+	  },false);
+	   
+	  blockpic3.addEventListener("touchend",function() {
+	   document.removeEventListener("touchmove",defaultEvent,false);
+	  },false);
+	  function defaultEvent(e) {
+	   e.preventDefault();
+	  }
+	</script>
+	<script type="text/javascript">
+		// 获取节点
+	  var blockpic4 = document.getElementById("ptarget4");
+	  var oWp4,oHp4;
+	  // 绑定touchstart事件
+	  blockpic4.addEventListener("touchstart", function(e) {
+	   console.log(e);
+	   var touches = e.touches[0];
+	   oWp4 = touches.clientX - blockpic4.offsetLeft;
+	   oHp4 = touches.clientY - blockpic4.offsetTop;
+	   //阻止页面的滑动默认事件
+	   document.addEventListener("touchmove",defaultEvent,false);
+	  },false)
+	 
+	  blockpic4.addEventListener("touchmove", function(e) {
+	   var touches = e.touches[0];
+	   var oLeft = touches.clientX - oWp4;
+	   var oTop = touches.clientY - oHp4;
+	   if(oLeft < 0) {
+	    oLeft = 0;
+	   }else if(oLeft > document.documentElement.clientWidth - blockpic4.offsetWidth) {
+	    oLeft = (document.documentElement.clientWidth - blockpic4.offsetWidth);
+	   }
+	   blockpic4.style.left = oLeft + "px";
+	   blockpic4.style.top = oTop + "px";
+	  },false);
+	   
+	  blockpic4.addEventListener("touchend",function() {
+	   document.removeEventListener("touchmove",defaultEvent,false);
+	  },false);
+	  function defaultEvent(e) {
+	   e.preventDefault();
+	  }
+	</script>

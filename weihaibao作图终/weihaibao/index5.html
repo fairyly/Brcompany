@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/jquery.range.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.range.js"></script>
+<script>
+    $(document).bind('mobileinit',function(){  //放在中间
+        $.mobile.changePage.defaults.changeHash = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+    });
+</script>
+<style type="text/css">
+.demo{width:300px; margin:10px auto;}
+
+</style>
+<!-- <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
+</head>
+<body>
+	<div class="header">
+		<nav>
+			<div class="nav">
+				<ul>
+					<li style="width:28%"><a href="">返回</a></li>
+					<li style="width:45%"><a href="">微商海报</a></li>
+					<li style="width:22%"><a href="">首页</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+    
+	<div class="container">
+		<article>
+			<p style="width:100%;height:10px;"></p>
+			<div class="picview">
+				
+			</div>
+            <p style="width:100%;height:10px;"></p>
+			<div class="btnfunction">
+				<div class="rot" style="width:340px;margin:20px auto;padding-top: 20px;position:relative">
+					<div class="demo" style="width:300px; margin:10px auto;">
+					    <input type="hidden" class="single-slider" value="0" />
+					</div>
+					<script>
+						$(function(){
+							$('.single-slider').jRange({
+								from: -180,
+								to: 180,
+								step: 1,
+								scale: [-180,-90,0,90,180],
+								format: '%s',
+								width: 300,
+								showLabels: true,
+								showScale: true
+							});
+								var aa = $(".single-slider").val();
+								console.log(aa);
+						});
+						</script>
+
+					  <div class="clipb" style="width:325px;height:60px;margin:42px auto;text-align:center;color:#fff"><span class="sanjiao2"></span>
+							<div class="editx" style="width:14%;display:inline-block;margin-right:60px">
+								<input style="width:50px;height:20px" type="button" value="" class="btnjc"/>
+								<p>剪裁</p>
+							</div><div class="rotate" style="width:30%;display:inline-block">
+								<input style="width:50px;height:20px" type="button" value="" class="btnxz"/>
+								<p>旋转</p>
+							</div>
+					  </div>
+							
+				</div>
+			</div>
+
+			<div class="selcet">
+				<span style="float:left;margin-left:10px;color:#ffffff;height:30px;font-size:30px">√</span>
+				<span style="float:right;margin-right:10px;color:#ffffff;height:30px;font-size:30px">X</span>
+			</div>
+	    </article>
+	</div>
+
+	<div class="footer">
+		<footer>
+			<div class="build"><span><a href="">生成</span></a></div>
+		</footer>
+	</div>
+
+
+
+</body>
+</html>

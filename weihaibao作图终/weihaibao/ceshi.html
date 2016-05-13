@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/cropper.min.css">
+<link rel="stylesheet" href="css/jquery.range.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/cropper.min.js"></script>
+<script src="js/jquery.range.js"></script>
+<script>
+    $(document).bind('mobileinit',function(){  //放在中间
+        $.mobile.changePage.defaults.changeHash = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+    });
+</script>
+<style type="text/css">
+	.ceshi1{
+		-webkit-writing-mode:vertical-rl;
+		writing-mode:tb-rl;
+		writing-mode:vertical-rl;
+		height: 100px;
+		letter-spacing: 5px;
+	}
+</style>
+<!-- <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
+</head>
+<body>
+	<div class="header">
+		 
+		<nav>
+			<div class="nav">
+				<ul>
+					<li style="width:28%"><a href="">返回</a></li>
+					<li style="width:45%"><a href="">微商海报</a></li>
+					<li style="width:22%"><a href="">首页</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+    <!-- 头部结束 -->
+	<div class="container">
+		<article>
+			<div class="picview">
+				<!-- <img class="uppic" src=""> -->
+					<img class="uppic" src="images/uupic.gif" border="0" width="0" height="0" onload="AutoResizeImage(360,538,this)">
+					<script type="text/javascript">
+					//图片等比例缩小处理
+					function AutoResizeImage(maxWidth,maxHeight,objImg){
+							var img = new Image();
+							img.src = objImg.src;
+							var hRatio;
+							var wRatio;
+							var Ratio = 1;
+							var w = img.width;
+							var h = img.height;
+							wRatio = maxWidth / w;
+							hRatio = maxHeight / h;
+							if (maxWidth ==0 && maxHeight==0){
+							    Ratio = 1;
+							    }
+							    else if (maxWidth==0){//
+							        if (hRatio<1) Ratio = hRatio;
+							           }else if (maxHeight==0){
+							                 if (wRatio<1) Ratio = wRatio;
+							                 }else if (wRatio<1 || hRatio<1){
+							                       Ratio = (wRatio<=hRatio?wRatio:hRatio);
+							                        }
+							if (Ratio<1){
+								w = w * Ratio;
+								h = h * Ratio;
+							    }
+							objImg.height = h;
+							objImg.width = w;
+					}
+					</script>
+					<div class="wenzixianshi1">
+						<div class="delwenzi">x</div>
+						<div class="wzxs"></div>
+					</div>
+					
+			</div>
+            
+			<div class="btnfunction">
+				<div class="indexbtn" >
+					<div class="edit">
+						<img src="images/edit.gif" style="width:50px;height:35px"  class="btnedit"/>
+						<p style="padding-top:2px;font-size:16px">编辑</p>
+					</div><div class="effect">
+						<img src="images/edit.gif" style="width:50px;height:35px" class="btneffc"/>
+						<p style="padding-top:2px;font-size:16px">特效</p>
+					</div><div class="text">
+						<img src="images/edit.gif" style="width:50px;height:35px" class="btnwd"/>
+						<p style="padding-top:2px;font-size:16px">文字</p>
+					</div><div class="paster">
+						<img src="images/edit.gif" style="width:50px;height:35px" class="btnpas"/>
+						<p style="padding-top:2px;font-size:16px">贴纸</p>
+					</div>
+				</div>
+				<!-- 首页选项结束 -->
+				<div class="jiancai" style="display:none">
+					<div class="cut">
+						<ul>
+							<li><div class="ziyou"></div><span style="color:#e4007f">自由</span></li><li><div class="ziyou1"></div><span>1:1</span></li><li><div class="ziyou2"></div><span>2:3</span></li><li><div class="ziyou3"></div><span>3:2</span></li><li><div class="ziyou4"></div><span>3:4</span></li><li><div class="ziyou5"></div><span>4:3</span></li><li><div class="ziyou6"></div><span>16:9</span></li>
+						</ul>
+					</div>
+					 <p style="width:100%;height:20px;"></p>
+					<div class="rote" style="display:none">
+						<div class="demo" style="width:320px; margin:0px auto;">
+					    <input type="hidden" class="single-slider" value="0" />
+
+					</div>
+					<script>
+						$(function(){
+							$('.single-slider').jRange({
+								from: -180,
+								to: 180,
+								step: 1,
+								scale: [-180,-90,0,90,180],
+								format: '%s',
+								width: 300,
+								showLabels: true,
+								showScale: true
+							});
+								var aa = $(".single-slider").val();
+								console.log(aa);
+						});
+						</script>
+					</div>
+					<div class="xuanzhuan"><span class="sanjiao1"></span><span class="sanjiao2" style="display:none"></span><div class="jian"><img src="images/cut.png"/><p>剪裁</p></div><div class="xuan"><img src="images/zhuan.png"/><p>旋转</p></div><div class="queren">确认剪裁</div><div class="queren2" style="display:none">确认旋转</div></div>
+				</div>
+				<!-- 点击编辑后剪裁旋转结束 -->
+
+				<div class="selwenzi" style="display:none;">
+					<p style="width:100%;height:35px;"></p>
+					<div class="del" style="display:inline-block;vertical-align:middle;margin:0px 10px;font-size:29px;color:#ffffff">X</div><div class="ziti1" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="zi1">字体字体字体</div><p style="font-size:10px;color:#ffffff">字体1</p>
+					</div><div class="ziti2" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="zi2" contenteditable="true"><p style="margin-top:29%">字体字体字体字体字体字体</p></div><p style="font-size:10px;color:#ffffff">字体2</p>
+					</div><div class="ziti3" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="zi3"><p style="-webkit-writing-mode:vertical-rl;
+		writing-mode:tb-rl;
+		writing-mode:vertical-rl;
+		height: 70px;
+		letter-spacing: 3px;margin:0px auto">字体字体</p></div><p style="font-size:10px;color:#ffffff">字体3</p>
+					</div><div class="ziti4" style="display:inline-block;vertical-align:middle;text-align:center;margin-right:5px">
+						<div class="zi4"><p>字体字体</p><p>字体字体</p></div><p style="font-size:10px;color:#ffffff">字体4</p>
+					</div>
+				</div>
+				<!-- 选择文字结束 -->
+				<div class="tianjiawenzi" style="display:none">
+					 <div class="wordbtn">
+					     <input type="button" class="neirong" value="内容"/><input type="button" class="yangshi" value="效果"/>
+					</div>
+					<p style="width:100%;height:30px;"></p>
+					<div class="neironginput">
+						<input type="text" class="nrinput" value="文字效果"/>
+					</div>
+					<div class="slecyangshi" style="display:none;text-align:center">
+						<ul>
+							<li style="background-color:#ffffff"></li>
+							<li style="background-color:#000000"></li>
+							<li style="background-color:#ff0000"></li>
+							<li style="background-color:#ffff00"></li>
+							<li style="background-color:#00ff00"></li>
+							<li style="background-color:#0000ff"></li>
+				        </ul>
+					</div>
+					<p style="width:100%;height:20px;"></p>
+					<div class="selcet">
+						<span class="duihao" style="float:left;margin-left:10px;color:#ffffff;height:30px;font-size:20px">√</span>
+						<span class="quxiao" style="float:right;margin-right:10px;color:#ffffff;height:30px;font-size:20px">X</span>
+					</div>
+					<script type="text/javascript">
+					     $(function(){
+					     	$(".neirong").click(function(){
+					     		$(".neirong").css("background-color","#323232");
+					     		$(".yangshi").css("background-color","#000000");
+					     		console.log("shuru");
+					     		$(".neironginput").show();
+					     		$(".slecyangshi").hide();
+					     	});
+					     	$(".yangshi").click(function(){
+					     		$(".yangshi").css("background-color","#323232");
+					     		$(".neirong").css("background-color","#000000");
+					     		console.log("shuru");
+					     		$(".neironginput").hide();
+					     		$(".slecyangshi").show();
+					     	});
+					     })
+					</script>
+				</div>
+				<!-- 添加文字结束 -->
+			</div>
+            
+			<!-- <div class="selcet">
+				
+			</div> -->
+	    </article>
+	</div>
+     <!-- 主体部分结束 -->
+	<div class="footer">
+		<footer>
+			<div class="build"><span><a href="">生成</span></a></div>
+		</footer>
+	</div>
+
+<script type="text/javascript">
+	$(function(){
+	// 	 var urlinfo=window.location.href; //获取当前页面的url 
+	// 	var len=urlinfo.length;//获取url的长度 
+	// 	var offset=urlinfo.indexOf("?");//设置参数字符串开始的位置 
+	// 	var newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串 
+	// 	var newsids=newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割 
+	// 	var newsid=newsids[1];//得到参数值 
+		
+ //        console.log(newsid);
+ //        $(".uppic").attr("src",newsid);
+        // $(".uppic").css("width","360px");
+        // $(".uppic").css("height","480px");
+      //   $(".picview").click(function(){
+      //   	var $picW= $(".uppic").css("width");
+		    // var $picH= $(".uppic").css("height");
+		    // console.log($picW);
+		    // console.log($picH);
+      //   });
+
+		$(".edit").click(function(){
+			$(".indexbtn").hide();
+	        $(".jiancai").show();
+			 $(".uppic").cropper({
+				  aspectRatio: NaN,
+				  crop: function(data) {
+				    console.log(Math.round(data.x));
+				    console.log(Math.round(data.y));
+				    console.log(Math.round(data.width));
+				    console.log(Math.round(data.height));
+				    console.log(Math.round(data.rotate));
+				    console.log(Math.round(data.scaleX));
+				    console.log(Math.round(data.scaleY));
+				  }
+				});
+	      });
+		$(".xuan").click(function(){
+			$(".cut").hide();
+			$(".sanjiao1").hide();
+			$(".queren").hide();
+			$(".rote").show();
+            $(".sanjiao2").show();
+            $(".queren2").show();
+		});
+		$(".jian").click(function(){
+			$(".cut").show();
+			$(".sanjiao1").show();
+			$(".queren").show();
+			$(".rote").hide();
+            $(".sanjiao2").hide();
+            $(".queren2").hide();
+		});
+		$(".text").click(function(){
+			$(".indexbtn").hide();
+			$(".selwenzi").show();
+			$(".del").click(function(){$(".selwenzi").hide();$(".indexbtn").show();});
+			$(".ziti1").click(function(){
+				$(".wenzixianshi1").show();
+				var $z1=$(".ziti1").text();
+				console.log($z1);
+				$(".wzxs").html($z1);
+				
+                // $(".delwenzi").show();
+			});
+			$(".delwenzi").click(function(){
+				$(".wenzixianshi1").hide();
+
+			});
+			$(".wzxs").click(function(){
+				$(".selwenzi").hide();
+				$(".tianjiawenzi").show();
+				 $(".wenzixianshi1").css("border","none");
+				
+				$(".duihao").click(function(){
+				  var $wz=$(".nrinput").val();
+                   $(".wzxs").html($wz);
+                   $(".wenzixianshi1").css("border","none");
+                   $(".delwenzi").hide();
+                   $(".tianjiawenzi").hide();
+					$(".selwenzi").show();
+				});
+				$(".quxiao").click(function(){
+					$(".tianjiawenzi").hide();
+					$(".wenzixianshi1").hide();
+					$(".selwenzi").show();
+				});
+			})
+		});
+	});
+
+
+</script>
+</script>
+
+</body>
+</html>

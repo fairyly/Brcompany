@@ -1,0 +1,92 @@
+*{
+	margin:0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.indexone{
+	width: 100%;
+    height: 600px;
+    background-image: url(../images/bg.gif);
+	
+}
+.upload{
+	width: 100%;
+	height: 600px;
+	text-align:center;
+	margin:0px auto;
+	/*background-color: #fd6085;*/
+}
+.camera{
+	width: 180px;
+	height: 180px;
+	position: relative;
+	border-radius: 50%;
+	background-color: #ffffff;
+	margin:0px auto;
+}
+.capic img,.ppic img{
+	width:90px;
+	height:80px;
+}
+.capic{
+	width: 90px;
+	height: 80px;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left:-45px; 
+    margin-top: -40px;
+	/*background-image: url(../images/index1.gif);
+	background-repeat: no-repeat;
+	background-position: center center;*/
+}
+.picture{
+	width: 180px;
+	height: 180px;
+	position: relative;
+	border-radius: 50%;
+	background-color: #ffffff;
+	margin:0px auto;
+}
+.index2{
+	position: relative;
+}
+.picput{
+	position: absolute;
+	
+	background-color: rgba(255,255,255,0);
+}
+.ppic{
+	width: 90px;
+	height: 80px;
+	position: absolute;
+	text-align: center;
+    left: 50%;
+    top: 50%;
+    margin-left:-45px; 
+    margin-top: -40px;
+	/*background-image: url(../images/index2.gif);
+	background-repeat: no-repeat;
+	background-position: center center;*/
+}
+.selecpic{
+	width: 180px;
+	height: 75px;
+	position: relative;
+	margin:0px auto;
+}
+.spic{
+	width: 180px;
+	height: 50px;
+	position: absolute;
+	font-size: 41px;
+	font-weight: bold;
+	text-shadow:1px 1px 2px #ccc;
+	color: #fc6e90;
+	opacity: 0.85;
+}

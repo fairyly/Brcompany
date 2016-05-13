@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/touchslider.js"></script>
+<script>
+    $(document).bind('mobileinit',function(){  //放在中间
+        $.mobile.changePage.defaults.changeHash = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+    });
+</script>
+<!-- <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
+</head>
+<body>
+	<div class="header">
+		<nav>
+			<div class="nav">
+				<ul>
+					<li style="width:28%"><a href="">返回</a></li>
+					<li style="width:45%"><a href="">微商海报</a></li>
+					<li style="width:22%"><a href="">首页</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+    
+	<div class="container">
+		<article>
+			<p style="width:100%;height:10px;"></p>
+			<div class="picview">
+				
+			</div>
+            <p style="width:100%;height:10px;"></p>
+			<div class="btnfunction">
+				<div class="clip" style="width:340px;margin-left:20px;">
+					 <div class='swipe' style="display:inline;">
+						  <ul id='slider'style="margin-left:5px;">
+						    <li><img src="images/1.jpg"><p style="font-size:12px;color:#fff">自由</p></li><li><img src="images/2.jpg"><p style="font-size:12px;color:#fff">自由</p></li><li><img src="images/3.jpg"><p style="font-size:12px;color:#fff">自由</p></li><li><img src="images/4.jpg"><p style="font-size:12px;color:#fff">自由</p></li><li><img src="images/5.jpg"><p style="font-size:12px;color:#fff">自由</p></li>
+						  </ul>
+						  <span class="sanjiao1"></span>
+					 </div>
+					 <div id="pagenavi" style="display:none">
+							<a href="#" class="active">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+					  </div>
+					  <div class="clipb" style="width:325px;height:60px;margin:15px auto;text-align:center;color:#fff">
+							<div class="editx" style="width:14%;display:inline-block;margin-right:60px">
+								<input style="width:50px;height:20px" type="button" value="" class="btnjc"/>
+								<p>剪裁</p>
+							</div><div class="rotate" style="width:30%;display:inline-block">
+								<input style="width:50px;height:20px" type="button" value="" class="btnxz"/>
+								<p>旋转</p>
+							</div>
+					  </div>
+							<script type="text/javascript">
+								console=window.console || {dir:new Function(),log:new Function()};
+								var active=0,
+									as=document.getElementById('pagenavi').getElementsByTagName('a');
+								for(var i=0;i<as.length;i++){
+									(function(){
+										var j=i;
+										as[i].onclick=function(){
+											t4.slide(j);
+											return false;
+										}
+									})();
+								}
+								var t1=new TouchSlider('slider',{duration:800, interval:3000, direction:0, autoplay:false, align:'left', mousewheel:false, mouse:true, 
+
+								fullsize:false});
+								var t11=new TouchSlider('slider1',{duration:800, interval:3000, direction:0, autoplay:false, align:'left', mousewheel:false, 
+
+								mouse:true, fullsize:false});
+								var t2=new TouchSlider('slider2',{duration:600, interval:3000, direction:1, autoplay:false, align:'middle', mousewheel:true, 
+
+								mouse:true, fullsize:true});
+								var t3=new TouchSlider('slider3',{duration:1000, direction:0, interval:3000, fullsize:true});
+								var t4=new TouchSlider('slider4',{speed:1000, direction:0, interval:6000, fullsize:true});
+								t4.on('before',function(m,n){
+								    as[m].className='';
+									as[n].className='active';
+								})
+							</script>
+				    </div>
+				</div>
+			</div>
+
+			<div class="selcet">
+				<span style="float:left;margin-left:10px;color:#ffffff;height:30px;font-size:30px">√</span>
+				<span style="float:right;margin-right:10px;color:#ffffff;height:30px;font-size:30px">X</span>
+			</div>
+	    </article>
+	</div>
+
+	<div class="footer">
+		<footer>
+			<div class="build"><span><a href="">生成</span></a></div>
+		</footer>
+	</div>
+
+
+
+</body>
+</html>
