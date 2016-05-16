@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="" name="Keywords">
+		<meta content="" name="Description">
+		<script type="text/javascript" src="__PUBLIC__/Home/dining/jQuery.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+		body{}
+		.noprint{display : none; }
+		td{ padding:1mm 0; }
+		.tabl{ word-wrap:break-word;word-break:break-all;border-collapse:collapse; width:100%;font-size:12px;
+			font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;}
+		.tdFirst{ width:45%;}
+		.tdSecond{ width:25%;}
+		.borderTop{border-top:1px dashed #000; }
+		.borderTopBot{ border-top:1px dashed #000; border-bottom:1px dashed #000; }
+		.secondTitle td{ font-size:16px; padding:1.4mm 0;}
+		.remark td{ font-size:11px; padding:0;}
+		/*.firsttd{ padding-right:1mm;}
+		.secondtd{ padding-right:1mm;}
+		.thirdtd{ padding-right:1mm;}
+		.fourthtd{ text-align: right}*/
+		/*.title{line-height:80%;width:58mm; font-weight:400;font-size:14px; text-align:center;}
+		.merchant_title{line-height:150%;width:58mm; font-weight:800;font-size:24px; text-align:center;}*/
+		</style>
+		<style media="print">
+		 #btn{
+		  display:none;
+		 }
+		</style>
+		<div id="printf">
+		<div class="title"><p>{$orderPrint.name}</p><br><p>订单编号：{$orderPrint.create_time|date="YmdHis",###}</p></div>
+		<table cellpadding="0" cellspacing="0" class="tabl" style="margin-top:8px;">
+			<tr class="borderTop">
+				<td colspan="2">
+					<div style="text-align: left;">姓名:</div>
+				</td>
+				<td colspan="2">
+					<div style="text-align: right;">{$orderPrint.recman}</div>
+				</td>
+			</tr>
+			<tr class="borderTop">
+				<td colspan="2">
+					<div style="text-align: left;">电话:</div>
+				</td>
+				<td colspan="2">
+					<div style="text-align: right;">{$orderPrint.rectel}</div>
+				</td>
+			</tr>
+			<tr class="borderTop">
+				<td colspan="2">
+					<div style="text-align: left;">地址:</div>
+				</td>
+				<td colspan="2">
+					<div style="text-align: right;">{$orderPrint.recadd}</div>
+				</td>
+			</tr>
+			<tr class="borderTop">
+				<td colspan="2">
+					<div style="text-align: left;">配货比6P/6/5/4:</div>
+				</td>
+				<td colspan="2">
+					<div style="text-align: right;">{$orderPrint.sixp}/{$orderPrint.six}/{$orderPrint.five}/{$orderPrint.four}</div>
+				</td>
+			</tr>
+			<tr class="borderTop">
+				<td colspan="2">
+					<div style="text-align: left;">备注:</div>
+				</td>
+				<td colspan="2">
+					<div style="text-align: right;">{$orderPrint.note}</div>
+				</td>
+			</tr>
+			<tr class="borderTop">
+				<td colspan="4">
+					<div style="text-align: center;">
+						代理商发货单
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<input type="button" value="开始打印" id="btn">
+	</body>
+</html>
+<script type="text/javascript">
+$("#btn").click(function(){
+    document.body.innerHTML=document.getElementById('printf').innerHTML;
+    window.print();
+});
+</script>

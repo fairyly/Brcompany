@@ -1,0 +1,59 @@
+<div class="Item hr">
+    <span class="fr">
+        <form action="{:U('Agent/searchs')}" method="get">姓名/电话/微信:
+            <input type="text" name="username" value="" size="10"/>
+            <button class="btn submit">搜索</button> 
+        </form>
+    </span>
+    <div class="current">审核列表</div>
+</div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>姓名</td>
+                <td>电话</td>
+                <td>微信</td>
+                <td>申请级别</td>
+                <td>申请时间</td>
+                <td>上级</td>
+                <td>打款截图</td>
+                <td>管理</td>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="agent" id="vo">
+                <tr align="center">
+                    <td>{$vo.id}</td>
+                    <td><a href="{:U('agent/detail', array('id'=>$vo['id']))}">{$vo.name}</a></td>
+                    <td>{$vo.tel}</td>
+                    <td>{$vo.wechat}</td>
+                    <td>
+                        <if condition="$vo.agent_level eq 1"> 总代理</if>
+                        <if condition="$vo.agent_level eq 2">一级代理</if>
+                        <if condition="$vo.agent_level eq 3">二级代理</if>
+                        <if condition="$vo.agent_level eq 4">特约代理</if>
+                    </td>
+                    <td>{$vo.create_time|date="Y-m-d H:i",###}</td>
+                    <td>{$vo.fid}</td>
+                    <td>{$vo.pic}</td>
+                    <td>
+                        [<a href="{:U('Agent/checkdeal', array('id' => $vo['id']))}">审核</a>]
+                        [<a href="{:U('Agent/checknotdeal', array('id' => $vo['id']))}">拒绝审核</a>]
+                    </td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+
+<div class="page">
+    {$page}
+</div>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+// var id = $(this).attr("value");
+// $(".check").click(function(){
+//     commonAjaxSubmit("{:U('Agent/check')}");
+//     return false;
+// });
+</script>

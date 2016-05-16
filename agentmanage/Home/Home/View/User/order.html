@@ -1,0 +1,89 @@
+<style type="text/css">
+body{background:#F0E9E9;}
+</style>
+	<div class="header">
+		<a href="javascript:history.back()"></a>T-star代理商管理平台
+	</div>
+	<div class="dl_main">
+		<div class="dl_main_select">
+			<a href="#">已发货</a>
+			<a href="#">待发货</a>
+		</div>
+			<div class="select_list">
+		<volist name="sents" id="sent" key="k">
+				<div class="dl_main_list">
+					<div class="dl_main_list_top"  onclick="javascript:openDIV({$k},'{$sent.ShipperCode}','{$sent.sentNumber}')">
+						<div class="dl_main_list_top_left">
+							<p>{$sent.day}</p>
+							<span>{$sent.moth}月</span>
+						</div>
+						<div class="dl_main_list_top_center">
+							<p>{$sent.recman}:{$sent.recadd}</p>
+							<p>4/4s:{$sent.four} 5/5s:{$sent.five} 6/6s:{$sent.six} 6p/6sp:{$sent.sixp}</p>
+							<p>快递 :<span>{$sent.sentCompany}</span>运单号 :<span>{$sent.sentNumber}</span></p>
+						</div>
+						<div class="dl_main_list_more">
+							<p class="ak">&nbsp;</p>
+						</div>
+					</div>
+
+					<div id="chaxun_sent{$k}" style="display:none;">
+					</div>
+				</div>
+		</volist>
+			</div>
+			<div class="select_list">
+		<volist name="nosents" id="nosent">
+				<div class="dl_main_list">
+					<div class="dl_main_list_top">
+						<div class="dl_main_list_top_left">
+							<p>{$nosent.day}</p>
+							<span>{$nosent.moth}月</span>
+						</div>
+						<div class="dl_main_list_top_center">
+							<p>{$nosent.recman}:{$nosent.recadd}</p>
+							<p>4/4s:{$nosent.four} 5/5s:{$nosent.five} 6/6s:{$nosent.six} 6p/6sp:{$nosent.sixp}</p>
+							<p>暂无快递/物流信息！</span></p>
+						</div>
+						<div class="dl_main_list_more">
+							<p class="ak">&nbsp;</p>
+						</div>
+					</div>
+				</div>
+		</volist>
+			</div>
+	</div>
+<script type="text/javascript">
+function openDIV(index,sentCompany,sentNumber){
+	var vvv=document.getElementById('chaxun_sent'+index);
+	if($("#chaxun_sent"+index)[0].style.display =='none'){
+		getSentInfo(sentCompany,sentNumber,index);
+		$("#chaxun_sent"+index).show();
+	}else{
+		$("#chaxun_sent"+index).hide();
+	}
+}
+ 
+function getSentInfo(sentCompany,sentNumber,index){
+	$.ajax({
+		type: 'POST',
+		url: "{:U('User/getSentInfo')}" ,
+		data: {sentCompany:sentCompany, sentNumber:sentNumber},
+		dataType:'json',
+		success:function(data) {  
+			data=eval('(' + data + ')');
+			// alert(data["state"]);
+			$("#chaxun_sent"+index).html("");
+			$.each(data.Traces, function(i,val){    
+			// $("#chaxun_sent"+index).append(val.AcceptTime+" "+val.AcceptStation+"<br>");
+			$("#chaxun_sent"+index).append("<p>"+val.AcceptTime+" "+val.AcceptStation+"</p>");
+			// alert(val);
+			});
+			$("#chaxun_sent"+index).append("<font color='red'><p>以上是最新物流信息！</p></font>");
+		},  
+		error : function() {
+			alert("异常！");  
+		}	  
+	});
+}
+</script>

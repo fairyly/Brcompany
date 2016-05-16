@@ -1,0 +1,61 @@
+<div class="Item hr">
+    <div class="current">查询列表</div>
+</div>
+<empty name="searchs.list"> <font color="red" size="5">查询无此人数据！！！</font> <else/>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>姓名</td>
+                <td>电话</td>
+                <td>微信</td>
+                <td>级别</td>
+                <td>申请时间</td>
+                <td>上级</td>
+                <td>打款截图</td>
+                <td>管理</td>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="searchs.list" id="vo">
+                <tr align="center">
+                    <td>{$vo.id}</td>
+                    <td><a href="{:U('agent/detail', array('id'=>$vo['id']))}">{$vo.name}</a></td>
+                    <td>{$vo.tel}</td>
+                    <td>{$vo.wechat}</td>
+                    <td><if condition="$vo.agent_level eq 1"> 总代理</if>
+                        <if condition="$vo.agent_level eq 2">一级代理</if>
+                        <if condition="$vo.agent_level eq 3">二级代理</if>
+                        <if condition="$vo.agent_level eq 4">特约代理</if>
+                    </td>
+                    <td>{$vo.create_time|date="Y-m-d H:i",###}</td>
+                    <td><a href="{:U('agent/detail', array('id'=>$vo['fid']))}">{$vo.fname}</a></td>
+                    <td>{$vo.pic}</td>
+                    <td>
+                        <if condition="$vo['cancelauth'] eq 1"><font color="gray">此人已取消授权</font><else/>
+                            <if condition="$vo['ischeck'] eq 0">
+                                [<a href="{:U('Agent/checkdeal', array('id' => $vo['id']))}">审核</a>]
+                                [<a href="{:U('Agent/checknotdeal', array('id' => $vo['id']))}">拒绝审核</a>]
+                            <elseif condition="$vo['ischeck'] eq 2"/>
+                                [<font color="gray">拒绝审核</font>]
+                            <else/>
+                                [<a href="{:U('agent/cost', array('id'=>$vo['id']))}">消费</a>]
+                                [<a href="{:U('agent/edit', array('id'=>$vo['id']))}">操作</a>]
+                            </if>
+                        </if>
+                    </td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+</empty>
+<div class="page">
+    {$searchs.show}
+</div>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+$(".submit").click(function(){
+    commonAjaxSubmit("{:U('Agent/ordersearch')}");
+    return false;
+});
+</script>

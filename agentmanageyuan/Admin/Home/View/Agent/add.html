@@ -1,0 +1,72 @@
+<div class="contentArea">
+    <div class="Item hr">
+        <div class="current">添加代理商</div>
+    </div>
+    <form>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+            <tr>
+                <th width="100">姓名：</th>
+                <td><input name="name" type="text" class="input" size="30" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="100">对接人：</th>
+                    <td>
+                        <select name="people">
+                        <option value="0" select="selected">请选择</option>
+                        <volist name="men" id="man">
+                            <option value="{$man.id}">{$man.remark}</option>
+                        </volist>
+                        </select>
+                    </td>
+            </tr>
+            <tr>
+                <th width="100">代理级别：</th>
+                    <td><select name="level">
+                        <option value="0" select="selected">请选择</option>
+                        <option value="1">总代理</option>
+                        <option value="2">一级代理</option>
+                        <option value="3">二级代理</option>
+                        <option value="4">特约代理</option></select>
+                    </td>
+            </tr>
+            <tr>
+                <th width="100">手机号：</th>
+                <td><input class="input" name="tel" type="text" size="30" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="100">微信：</th>
+                <td><input class="input" name="wechat" type="text" size="30" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="100">身份证号：</th>
+                <td><input class="input" name="idcode" type="text" size="30" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="100">地址：</th>
+                <td><input class="input" name="address" type="text" size="30" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="100">上级：</th>
+                <td><input class="input" name="fid" type="text" class="input" size="30" value="公司"/>&nbsp;&nbsp;<font color="red">*</td>
+            </tr>
+            <tr>
+                <th width="100">上级微信/电话：</th>
+                <td><input class="input" name="fcheck" type="text" class="input" size="30" placeholder="上级默认为公司可不填"/>
+            </tr>
+            <tr>
+                <th width="100">备注：</th>
+                <td><textarea class="jq_watermark" rows = "5" cols="68" name="note" placeholder="代理商备注信息"></textarea></td>
+            </tr>
+        </table>
+    </form>
+    <div class="commonBtnArea" >
+        <button class="btn submit">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">*为必填项</font>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(".submit").click(function(){
+    commonAjaxSubmit("{:U('Agent/create')}");
+    return false;
+});
+</script>

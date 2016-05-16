@@ -1,0 +1,53 @@
+<div class="Item hr">
+    <!-- <span class="fr">
+        <form >姓名/电话:
+            <input type="text" name="username" value="" size="10"/>      
+            <button class="btn submit">搜索</button> 
+        </form>
+    </span> -->
+    <div class="current">已发货列表</div>
+</div>
+<empty name="order.list"> <font color="gray" size="8">暂时没有已经发货的订单！</font> <else/>
+<form>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>收件人</td>
+                <td>电话</td>
+                <td>地址</td>
+                <td>配货比6p/6/5/4</td>
+                <td>备注</td>
+                <td>快递/物流公司</td>
+                <td>单号</td>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="order.list" id="vo">
+            <tr align="center">
+                <td>{$vo.id}</td>
+                <td>{$vo.recman}</td>
+                <td>{$vo.rectel}</td>
+                <td>{$vo.recadd}</td>
+                <td>{$vo.sixp}/{$vo.six}/{$vo.five}/{$vo.four}</td>
+                <td>{$vo.note}</td>
+                <td><font color="red">{$vo.sent_company}</font></td>
+                <td><font color="red">{$vo.sent_number}</font></td>
+                </td>
+            </tr>
+            </volist>
+        </tbody>
+    </table>
+</form>
+</empty>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+$(".submit").click(function(){
+    commonAjaxSubmit("{:U('Agent/ordersearch')}");
+    return false;
+});
+</script>
+
+<div class="page">
+    {$order.show}
+</div>

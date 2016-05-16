@@ -1,0 +1,54 @@
+<?php if (!defined('THINK_PATH')) exit();?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>代理商授权查询</title>
+<script type="text/javascript" src="/agentmanage/Public/javascripts/home/functions.js"></script>
+<style type="text/css">
+*{ margin:0; padding:0;}
+p{ margin:0;}
+a{ list-style:none;}
+body{ font-family:'Microsoft YaHei'; font-size:12px; color:#fff;}
+.con{
+	 background:url(/agentmanage/Public/images/home/chaxunbj.jpg) no-repeat; background-size:100%;
+}
+.header{ width:100%; margin:0 auto; overflow:hidden;}
+.header p{ width:70%; margin:20% auto 10%;}
+.header p img{ width:100%; margin:0 auto;}
+.diyi{width:70%; height:30px;  margin:20% 0 0 16%; border-radius:8px; background:none;  }
+.header span{ margin:0 0 0 16%; line-height:25px; font-size:16px;}
+#dier{width:60%;margin:20% 0 0 22%; background:#ff3366; border-radius:20px; border:none; height:50px; color:#fff; font-size:22px;}
+</style>
+
+</head>
+<body>
+	<div class="con" style="max-width:768px;margin:0px auto">
+		<div class="header">
+			<p><img src="/agentmanage/Public/images/home/chaoxunlogo_03.png"></p>
+			<form action="<?php echo U('Index/check');?>" method="post" style="margin-top: -10px;">
+				<input type="text" name="number" class="diyi" style="background-color:white"/><br>
+				<span>请输入经销商的手机号或者微信号</span><br>
+				<input type="text" name="vcode" class="diyi" style="width:30%;background-color:white"/>
+				<img src="<?php echo U('verifyCode');?>"  title="看不清？单击此处刷新" onclick="this.src+='?rand='+Math.random();"  style="cursor: pointer; vertical-align: middle;"/>
+				<input type="submit" id="dier" value="查询"/>
+			</form>
+			<span style="width:100%;height:10px"></span>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var kk=document.getElementsByTagName('body')[0];
+	kk.style.backgroundColor="#ffffff";
+	
+	//count百度统计代码
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?bf055ca7d3ab1e1971f2b9727b573d8f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();	
+</script>

@@ -1,0 +1,59 @@
+<div class="Item hr">
+    <div class="current">总订单报表详细</div>
+</div>
+<p style="margin-top:10px;margin-left:47%;"><font size="5px">{$count.name}报表</font></p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab" style="border-collapse:collapse;text-align:center;border-left-style: none; border-right-style: none;">
+        <tbody>
+            <span>数据周期：<font color="green">{$count.time}</font></span><br />
+            <span>环比周期：<font color="green">{$count.cycletime}</font></span><br />
+            <span>同比周期：<font color="green">缺少数据</font></span>
+            <tr bgcolor="#ccc">
+                <td></td><td>数据</td><td>环比</td><td>同比</td>
+            </tr>
+            <tr>
+                <td>总收入</td><td>{$count.count}</td><td>{$count.incomeCycleRatio}</td><td>0</td>
+            </tr>
+            <tr bgcolor="#ccc">
+                <td>总订单</td><td>{$count.money}</td><td>{$count.countCycleRatio}</td><td>0</td>
+            </tr>
+            <tr>
+                <td>6p/6sp</td><td>{$count.sixp}</td><td>{$count.sixpCycle}</td><td>0</td>
+            </tr>
+            <tr bgcolor="#ccc">
+                <td>6/6s</td><td>{$count.six}</td><td>{$count.sixCycle}</td><td>0</td>
+            </tr>
+            <tr>
+                <td>5/5s</td><td>{$count.five}</td><td>{$count.fiveCycle}</td><td>0</td>
+            </tr>
+            <tr bgcolor="#ccc">
+                <td>4/4s</td><td>{$count.four}</td><td>{$count.fourCycle}</td><td>0</td>
+            </tr>
+            <empty name="detail">
+            <else/>
+                <tr>
+                    <td>收入明细：</td>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align:left;">
+                        <empty name="detail.list"><font color="gray">暂无更多数据</font><else/>
+                        <volist name="detail.list" id="vo">
+                            {$vo.name}--{$vo.create_time|date="Y-m-d H:i:s",###}--6p:{$vo.sixp}/6:{$vo.six}/5:{$vo.five}/4:{$vo.four}--{$vo.cost_money}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.check}<br />
+                        </volist>
+                        <div class="page">
+                            {$detail.show}
+                        </div>
+                        </empty>
+                    </td>
+                </tr>
+            </empty>
+        </tbody>
+    </table>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+// var id = $(this).attr("value");
+// $(".check").click(function(){
+//     commonAjaxSubmit("{:U('Agent/check')}");
+//     return false;
+// });
+</script>

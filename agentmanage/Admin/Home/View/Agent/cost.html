@@ -1,0 +1,65 @@
+<div class="contentArea">
+    <div class="Item hr">
+        <div class="current">添加消费</div>
+    </div>
+    <form enctype="multipart/form-data">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+            <tr>
+                <th width="80">代理商：</th><td>{$cost.name}</td>
+            </tr>
+            <tr>
+                <th width="80">收件人：</th>
+                <td><input class="input" name="recman" type="text" size="10" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">收件人电话：</th>
+                <td><input class="input" name="rectel" type="text" size="30" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">收件人地址：</th>
+                <td><input class="input" name="recadd" type="text" size="50" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">数量：</th>
+                <td style="width:180px;float:left;">4/4s<input class="input" name="four" type="text" size="10" /></td>
+                <td style="width:180px;float:left;">5/5s<input class="input" name="five" type="text" size="10" /></td>
+                <td style="width:180px;float:left;">6/6s<input class="input" name="six" type="text" size="10" /></td>
+                <td style="width:200px;float:left;">6p/6ps<input class="input" name="sixp" type="text" size="10" /></td>
+            </tr>
+            <tr>
+                <th width="80">消费金额：</th>
+                <td><input class="input" name="cost" type="text" size="10" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">运费：</th>
+                <td><input class="input" name="charge" type="text" size="10" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">支付方式：</th>
+                <td><input name="source" type="text" class="input" size="30" /></td>
+            </tr>
+            <!-- <tr>
+                <th width="80">上传支付截图：</th><td><input name="payment1" type="file"/>
+                <input name="payment2" type="file"/>
+                <input name="payment3" type="file"/></td>
+            </tr>
+            <tr>
+                <th width="80">邮编：</th><td><input name="postcode" type="text" class="input" size="30" /></td>
+            </tr> -->
+            <tr>
+                <th width="80">备注：</th>
+                <td><textarea class="jq_watermark" rows = "5" cols="68" name="note" placeholder="代理商备注信息"></textarea></td>
+            </tr>
+        </table>
+    </form>
+    <div class="commonBtnArea" >
+        <button class="btn submit">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">*为必填项</font>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(".submit").click(function(){
+    commonAjaxSubmit("{:U('Agent/costcreate', array('id'=>$cost['id']))}");
+    return false;
+});
+</script>

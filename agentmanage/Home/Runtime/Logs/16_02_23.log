@@ -1,0 +1,1463 @@
+[ 2016-02-23T11:45:35+08:00 ] ::1 /agentmanage/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T11:45:38+08:00 ] ::1 /agentmanage/index.php/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: userInfo D:\phpStudy\WWW\agentmanage\Home\Home\Controller\IndexController.class.php 第 27 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T11:45:38+08:00 ] ::1 /agentmanage/index.php/Home/Index/verifyCode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-02-23T11:45:50+08:00 ] ::1 /agentmanage/index.php/Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: userInfo D:\phpStudy\WWW\agentmanage\Home\Home\Controller\LoginController.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.006000s ]
+SQL: SELECT `id`,`name`,`fid`,`agent_level`,`tel`,`wechat` FROM `ea_agent_user` WHERE ( tel = "18739986017" and telpwd = "de01498bda8521c98cb4022d667d44ee" and ischeck = 1 and cancelauth = 0 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006000s ]
+SQL: SELECT SUM(cost_money) AS tp_sum FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `ea_agent_user` WHERE ( id =120 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T11:46:09+08:00 ] ::1 /agentmanage/index.php/Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T11:46:10+08:00 ] ::1 /agentmanage/index.php/Home/User/index/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`name`,`fid`,`agent_level`,`tel`,`wechat` FROM `ea_agent_user` WHERE ( id = "31" ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006000s ]
+SQL: SELECT SUM(cost_money) AS tp_sum FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `ea_agent_user` WHERE ( id =120 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T11:46:13+08:00 ] ::1 /agentmanage/index.php/Home/User/order/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `fid`,`agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `ea_agent_cost` WHERE ( uid = 31 and sent = 1 )  [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM `ea_sent` [ RunTime:0.005000s ]
+SQL: SELECT `company` FROM `ea_sent` WHERE ( company_code = "0" ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 217 行.
+SQL: SELECT `company` FROM `ea_sent` WHERE ( company_code = "0" ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 217 行.
+SQL: SELECT `company` FROM `ea_sent` WHERE ( company_code = "BTWL" ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 217 行.
+SQL: SELECT `company` FROM `ea_sent` WHERE ( company_code = "BTWL" ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 217 行.
+SQL: SELECT `company` FROM `ea_sent` WHERE ( company_code = "FAST" ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 217 行.
+SQL: SELECT `company` FROM `ea_sent` WHERE ( company_code = "QFKD" ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 217 行.
+SQL: SELECT `company` FROM `ea_sent` WHERE ( company_code = "0" ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 217 行.
+SQL: SELECT `company` FROM `ea_sent` WHERE ( company_code = "HTKY" ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 217 行.
+SQL: SELECT `company` FROM `ea_sent` WHERE ( company_code = "HTKY" ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ea_agent_cost` WHERE ( uid = 31 and sent = 0 )  [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 235 行.
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 235 行.
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 235 行.
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 235 行.
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 235 行.
+NOTIC: [8] Undefined index: recmen D:\phpStudy\WWW\agentmanage\Home\Home\Controller\UserController.class.php 第 235 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T11:52:53+08:00 ] ::1 /agentmanage/index.php/Home/User/orderOnline/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.006001s ]
+SQL: SELECT `fid`,`agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_admin` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`remark` FROM `ea_admin` WHERE ( role_id = 2 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2016-02-23T11:52:54+08:00 ] ::1 /agentmanage/index.php/Home/User/orderOnline/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.007001s ]
+SQL: SELECT `fid`,`agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_admin` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`remark` FROM `ea_admin` WHERE ( role_id = 2 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T11:53:01+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T11:53:36+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T11:55:18+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T11:55:25+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-02-23T17:24:26+08:00 ] ::1 /agentmanage/index.php/Home/User/orderOnline/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `fid`,`agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_admin` [ RunTime:0.004000s ]
+SQL: SELECT `id`,`remark` FROM `ea_admin` WHERE ( role_id = 2 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:24:28+08:00 ] ::1 /agentmanage/index.php/Home/User/orderOnline/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.006001s ]
+SQL: SELECT `fid`,`agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_admin` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`remark` FROM `ea_admin` WHERE ( role_id = 2 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-02-23T17:25:04+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'的国防生','法大使馆的发给s','方式该地方是',0,40,0,40,'讽德诵功水电�\�',1456219503,1,120,80,78,40,'../Public/uploads/home/2016-02-23/','56cc2570cac08.gif') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:25:06+08:00 ] ::1 /agentmanage/index.php/Home/User/index/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`name`,`fid`,`agent_level`,`tel`,`wechat` FROM `ea_agent_user` WHERE ( id = "31" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: SELECT SUM(cost_money) AS tp_sum FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `ea_agent_user` WHERE ( id =120 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:25:15+08:00 ] ::1 /agentmanage/index.php/Home/User/index/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`name`,`fid`,`agent_level`,`tel`,`wechat` FROM `ea_agent_user` WHERE ( id = "31" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006000s ]
+SQL: SELECT SUM(cost_money) AS tp_sum FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `ea_agent_user` WHERE ( id =120 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:25:19+08:00 ] ::1 /agentmanage/index.php/Home/User/index/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`name`,`fid`,`agent_level`,`tel`,`wechat` FROM `ea_agent_user` WHERE ( id = "31" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005001s ]
+SQL: SELECT SUM(cost_money) AS tp_sum FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT `name` FROM `ea_agent_user` WHERE ( id =120 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:25:56+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'的国防生','法大使馆的发给s','方式该地方是',0,0,0,0,'讽德诵功水电�\�',1456219555,1,120,0,78,0,'../Public/uploads/home/2016-02-23/','56cc25a469e06.gif') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:25:58+08:00 ] ::1 /agentmanage/index.php/Home/User/index/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`name`,`fid`,`agent_level`,`tel`,`wechat` FROM `ea_agent_user` WHERE ( id = "31" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005001s ]
+SQL: SELECT SUM(cost_money) AS tp_sum FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `ea_agent_user` WHERE ( id =120 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:28:46+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.006000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219725,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc264e410d5.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:28:47+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.003000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.002000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219726,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc264f50efa.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:28:48+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.004000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219727,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc26505befe.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:28:49+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219728,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc26516d493.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:28:50+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219729,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2652828a9.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:28:51+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219730,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc26539654f.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:28:52+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219731,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2654a9255.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:28:53+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219732,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2655bbf5a.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:28:54+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219733,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2656d03d0.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:28:55+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.004000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.004000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219734,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2657e6b6f.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:28:57+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.006000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219735,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc26590330c.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-02-23T17:28:58+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219737,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc265a14c89.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:28:59+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219738,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc265b25666.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:29:00+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219739,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc265c3ba1d.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:29:01+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219740,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc265d4e33a.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:29:02+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219741,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc265e5c9ef.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-02-23T17:29:03+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219742,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc265f7412d.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:29:04+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219743,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc26608721b.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-02-23T17:29:05+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219744,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc266199369.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:29:06+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219745,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2662ac83e.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:29:07+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219746,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2663bd9eb.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:29:08+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219747,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2664d12a9.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:29:09+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219748,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2665dde05.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:29:11+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.004001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219749,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc2666f16c3.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:29:12+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219751,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc26680c308.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T17:29:13+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006001s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,5,'后果是人体后无人挺好','发给好地方个','但是是放�\�',80,40,40,100,'讽德诵功水电费讽德诵�\�  股份',1456219752,1,120,260,78,130,'../Public/uploads/home/2016-02-23/','56cc26691a5d4.jpg') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-02-23T17:29:15+08:00 ] ::1 /agentmanage/index.php/Home/User/index/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`name`,`fid`,`agent_level`,`tel`,`wechat` FROM `ea_agent_user` WHERE ( id = "31" ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.005000s ]
+SQL: SELECT SUM(cost_money) AS tp_sum FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `ea_agent_user` WHERE ( id =120 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ea_agent_cost` WHERE ( uid =31 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:48:46+08:00 ] ::1 /agentmanage/index.php/Home/User/orderOnline/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:49:21+08:00 ] ::1 /agentmanage/index.php/Home/User/orderOnline/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `fid`,`agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_admin` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`remark` FROM `ea_admin` WHERE ( role_id = 2 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant code - assumed 'code' D:\phpStudy\WWW\agentmanage\Home\Runtime\Cache\Home\4c3888e892d8d66d751b7901c13ccff6.php 第 22 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:49:22+08:00 ] ::1 /agentmanage/index.php/Home/User/orderOnline/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `fid`,`agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_admin` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`remark` FROM `ea_admin` WHERE ( role_id = 2 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant code - assumed 'code' D:\phpStudy\WWW\agentmanage\Home\Runtime\Cache\Home\4c3888e892d8d66d751b7901c13ccff6.php 第 22 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:49:26+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31/code/235591.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:49:32+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31/code/235591.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:50:02+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31/code/595668.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-02-23T18:50:08+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31/code/595668.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-02-23T18:50:15+08:00 ] ::1 /agentmanage/index.php/Home/User/orderOnline/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005001s ]
+SQL: SELECT `fid`,`agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_admin` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`remark` FROM `ea_admin` WHERE ( role_id = 2 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant code - assumed 'code' D:\phpStudy\WWW\agentmanage\Home\Runtime\Cache\Home\4c3888e892d8d66d751b7901c13ccff6.php 第 22 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:50:16+08:00 ] ::1 /agentmanage/index.php/Home/User/orderOnline/id/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.006000s ]
+SQL: SELECT `fid`,`agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ea_admin` [ RunTime:0.005000s ]
+SQL: SELECT `id`,`remark` FROM `ea_admin` WHERE ( role_id = 2 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant code - assumed 'code' D:\phpStudy\WWW\agentmanage\Home\Runtime\Cache\Home\4c3888e892d8d66d751b7901c13ccff6.php 第 22 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:50:17+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31/code/436080.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:50:29+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31/code/891825.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-02-23T18:50:51+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31/code/891825.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.007000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,7,'fghg','fghfghfg','fghfghfgh',60,20,40,40,'fghfghfghfghfg',1456224650,1,120,160,78,80,'../Public/uploads/home/2016-02-23/','56cc398b342fd.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-02-23T18:50:52+08:00 ] ::1 /agentmanage/index.php/Home/User/onlineadd/id/31/code/891825.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ea_agent_user` [ RunTime:0.005000s ]
+SQL: SELECT `agent_level` FROM `ea_agent_user` WHERE ( id = 31 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 31 and agent_level = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `fid` FROM `ea_agent_user` WHERE ( id = 120 and agent_level = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\agentmanage\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `ea_agent_cost` [ RunTime:0.006000s ]
+SQL: INSERT INTO `ea_agent_cost` (`uid`,`operate_people`,`recman`,`rectel`,`recadd`,`four`,`five`,`six`,`sixp`,`note`,`create_time`,`orderLevel`,`one_uid`,`one_level_rebate`,`two_uid`,`two_level_rebate`,`rec_pic_path`,`rec_pic_name`) VALUES (31,7,'fghg','fghfghfg','fghfghfgh',60,20,40,40,'fghfghfghfghfg',1456224651,1,120,160,78,80,'../Public/uploads/home/2016-02-23/','56cc398c454aa.jpg') [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

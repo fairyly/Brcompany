@@ -1,0 +1,92 @@
+<div class="Item hr">
+    <div class="current">检索/导出规则</div>
+</div>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab" style="text-align:center;">
+    <form action="{:U('Order/outputExl')}" method="get">
+        <tr>
+            <td width="80">客服：</td>
+            <td>
+                <select name="people">
+                    <option value="0" selected="selected">客官请选择</option>
+                <volist name="admin" id="vo">
+                    <option value="{$vo.id}">{$vo.remark}</option>
+                </volist>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>下单人</td>
+            <td><input class="input" type="text" name="ordMan" placeholder="输入下单人" /></td>
+        </tr>
+        <tr>
+            <td>收件人</td>
+            <td><input class="input" type="text" name="recMan" placeholder="输入收件人" /></td>
+        </tr>
+        <tr>
+            <td>收件电话</td>
+            <td><input class="input" type="text" name="recTel" placeholder="输入收件电话" /></td>
+        </tr>
+        <tr>
+            <td>收件地址</td>
+            <td><input class="input" type="text" name="recAdd" placeholder="输入收件地址" /></td>
+        </tr>
+        <tr>
+            <td>订单时间</td>
+            <td>
+                始:<input class="input" type="text" name="timeStart" value="" id="" onclick="SelectDate(this,'yyyy-MM-dd hh:mm:ss')" placeholder="点击进行选择"/>
+                --终:<input class="input" type="text" name="timeStop" value="" id="" onclick="SelectDate(this,'yyyy-MM-dd hh:mm:ss')" placeholder="点击进行选择"/>
+            </td>
+        </tr>
+        <tr>
+            <td>审核状态</td>
+            <td>
+                <input class="input" type="radio" name="check" checked="checked" value="1"/>已审核
+                <input class="input" type="radio" name="check" value="0"/>未审核
+            </td>
+        </tr>
+        <tr>
+            <td>发货状态</td>
+            <td>
+                <input class="input" type="radio" name="sent" checked="checked" value="1"/>已发货
+                <input class="input" type="radio" name="sent" value="0"/>未发货
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="btn">导出</button>
+                <!-- <a href="{:U('order/output')}"> -->
+                <!-- <button class="btn submit">导出</button> -->
+            <!-- </a> -->
+            </td>
+        </tr>
+    </tr>
+    </form>
+</table>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+// $(function(){
+//         clickCheckbox();
+//         $(".submit").click(function(){
+//             if($("tbody input[type='checkbox']:checked").size()==0){
+//                 popup.alert("请先选择你要备份的数据库表吧");
+//                 return false;
+//             }
+//             if($(this).attr("disabledSubmit")){
+//                 popup.alert("已提交，系统在处理中...");
+//             }else{
+//                 $(this).attr("disabledSubmit",true).html("提交处理中...");
+//                 commonAjaxSubmit("{:U('Data/doBackup')}");
+// //                        popup.alert("系统处理中，如果数据库中数据较多可能需要较长时间，请稍候....");
+//                 setTimeout(function(){
+//                     popup.close("asyncbox_alert");
+//                 },2000);
+//             }
+//         });
+//     });
+// $(".submit").click(function(){
+//     commonAjaxSubmit("{:U('Order/outputExl')}");
+//     return false;
+// });
+</script>

@@ -1,0 +1,86 @@
+<div class="contentArea">
+    <div class="Item hr">
+        <div class="current">代理商详细信息</div>
+    </div>
+    <form>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+            <tr><th width="80">姓名：</th><td>{$edit.name}</td></tr>
+            <tr><th width="80">对接人：</th><td>{$edit.people}</td></tr>
+            <tr><th width="80">代理级别：</th>
+                <td><if condition="$edit.agent_level eq 1"> 总代理</if>
+                    <if condition="$edit.agent_level eq 2">一级代理</if>
+                    <if condition="$edit.agent_level eq 3">二级代理</if>
+                    <if condition="$edit.agent_level eq 4">特约代理</if>
+                </td>
+            </tr>
+            <tr><th width="80">身份证：</th><td>{$edit.idcode}</td></tr>
+            <tr><th width="80">上级：</th><td>{$edit.fid}</td></tr>
+            <tr><th width="80">手机号：</th><td>{$edit.tel}</td></tr>
+            <tr><th width="80">微信：</th><td>{$edit.wechat}</td></tr>
+            <tr><th width="80">地址：</th><td>{$edit.address}</td></tr>
+            <tr><th width="80">备注：</th><td>{$edit.note}</td></tr>
+            <tr><th width="80">升级信息：</th><td>{$edit.note}</td></tr>
+            <tr><th width="80">下属代理：</th>
+                <td>
+                    总代：<empty name="edit.one">无<else/>{$edit.one}<a href="{:U('Agent/underagent',array('id'=>$edit['id'],'level'=>'1','count'=>$edit['one']))}">-->查看</a></empty>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    一级：<empty name="edit.two">无<else/>{$edit.two}<a href="{:U('Agent/underagent',array('id'=>$edit['id'],'level'=>'2','count'=>$edit['two']))}">-->查看</a></empty>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    二级：<empty name="edit.three">无<else/>{$edit.three}<a href="{:U('Agent/underagent',array('id'=>$edit['id'],'level'=>'3','count'=>$edit['three']))}">-->查看</a></empty>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    特约：<empty name="edit.four">无<else/>{$edit.four}<a href="{:U('Agent/underagent',array('id'=>$edit['id'],'level'=>'4','count'=>$edit['four']))}">-->查看</a></empty>
+                </td>
+            </tr>
+            <tr>
+                <th width="80">消费信息：</th>
+                <td>
+                    <if condition="$edit.cost neq 0">
+                        截止到{$edit.time|date="Y-m-d H:i",###}, 共消费￥：{$edit.cost}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击进入[<a href="{:U('agent/costinfo', array('id'=>$edit['id']))}">详细列表</a>]
+                    <else/>
+                        [<font color="red">无消费信息</font>]
+                    </if>
+                </td>
+            </tr>
+            <tr>
+                <th width="80">收入信息：</th>
+                <td>
+                    <empty name="edit.revenue_money">[<font color="red">无收入信息</font>]<else/>截止到{$edit.time|date="Y-m-d H:i",###}, 共收入￥：{$edit.revenue_money}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击进入[<a href="{:U('Agent/consumedetail', array('id'=>$edit['id'],'agent_level'=>$edit['agent_level']))}" style="text-decoration:underline;">收入列表</a>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{:U('Agent/clearzero', array('id'=>$edit['id'], 'money'=>$edit['revenue_money']))}" style="text-decoration:underline;">结算（清零）</a></empty>
+                </td>
+            </tr>
+            <tr>
+                <th width="80">操作：</th>
+                <td>
+                    <if condition="$edit.cancelauth eq 1">
+                        <button class="btn recover">恢复授权</button>
+                        <else />
+                        <if condition="$edit.ischeck eq 0">
+                            [<font color="red">未授权</font>]
+                        <else/>
+                        <button class="btn cancel" onclick="return confirmAct();">取消授权</button>
+                        </if>
+                    </if>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!-- <div class="commonBtnArea" >
+        <button class="btn submit">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">*为必填项</font>
+    </div> -->
+</div>
+
+<script type="text/javascript">
+function confirmAct() 
+{ 
+    if(confirm('确定要取消授权吗?')) 
+    { 
+        return true; 
+    } 
+    return false; 
+}
+$(".cancel").click(function(){
+    commonAjaxSubmit("{:U('agent/cancelauth', array('id'=>$_GET['id'], 'status'=>'1'))}");
+    return false;
+});
+$(".recover").click(function(){
+    commonAjaxSubmit("{:U('agent/cancelauth', array('id'=>$_GET['id'], 'status'=>'0'))}");
+    return false;
+});
+</script>

@@ -1,0 +1,34 @@
+<div class="contentArea">
+    <div class="Item hr">
+        <div class="current">发货</div>
+    </div>
+    <form>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+            <tr>
+                <th width="80">快递公司：</th>
+                <td>
+                    <select name="company">
+                        <volist name="sent" id="sen">
+                            <option value="{$sen.company_code}">{$sen.company}</option>
+                        </volist>
+                    </select>
+                    <!-- <input name="company" type="text" class="input" size="30" /> -->
+                    &nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">快递单号：</th>
+                <td><input name="number" type="text" class="input" size="30" />&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+        </table>
+    </form>
+    <!-- <div class="commonBtnArea" > -->
+        <button class="btn submit" style="margin-left:15px;margin-top:15px;">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">*为必填项</font>
+    <!-- </div> -->
+</div>
+
+<script type="text/javascript">
+$(".submit").click(function(){
+    commonAjaxSubmit("{:U('Agent/sentcreate',array('id'=>$id))}");
+    return false;
+});
+</script>

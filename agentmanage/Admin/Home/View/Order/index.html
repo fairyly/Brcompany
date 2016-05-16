@@ -1,0 +1,71 @@
+<div class="Item hr">
+    <!-- <span class="fr">
+        <form action="" method="">姓名/电话:
+            <input type="text" name="username" value="" size="10"/>      
+            <button class="btn submit">搜索</button> 
+        </form>
+    </span> -->
+    <div class="current">订单详细列表</div>
+</div>
+<empty name="order"> <font color="gray" size="8">暂时没有订单！</font> <else/>
+<form>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td width="5%">下单人</td>
+                <td width="5%">代理级别</td>
+                <td width="5%">上级</td>
+                <td width="10%">下单时间</td>
+                <td width="5%">收件人</td>
+                <td width="5%">收件人电话</td>
+                <td>收件人地址</td>
+                <td>配货比6p/6/5/4</td>
+                <td width="7%">打款截图</td>
+                <td>备注</td>
+                <td width="5%">审核状态</td>
+                <td width="5%">发货状态</td>
+                <td width="9%">管理</td>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="order" id="vo">
+            <tr align="center">
+                <td>{$vo.id}</td>
+                <td>{$vo.name}</td>
+                <td>
+                    <if condition="$vo.agent_level eq 1"> 总代理</if>
+                    <if condition="$vo.agent_level eq 2">一级代理</if>
+                    <if condition="$vo.agent_level eq 3">二级代理</if>
+                    <if condition="$vo.agent_level eq 4">特约代理</if>
+                </td>
+                <td>{$vo.fid}</td>
+                <td>{$vo.create_time|date="Y-m-d H:i",###}</td>
+                <td>{$vo.recman}</td>
+                <td>{$vo.rectel}</td>
+                <td width="15%" title="{$vo.recadd}">{$vo.recaddt}</td>
+                <td>{$vo.sixp}/{$vo.six}/{$vo.five}/{$vo.four}</td>
+                <td>{$vo.pic}</td>
+                <td width="15%">{$vo.note}</td>
+                <td>[<if condition="$vo['check'] eq 1"><font color="green">已审核</font><else/><font color="red">未审核</font></if>]</td>
+                <td>[<if condition="$vo['sent'] eq 1"><font color="green">已发货</font><else/><font color="red">未发货</font></if>]</td>
+                <td><!-- [<if condition="$vo['sent'] eq 1"><font color="green">已发</font><else/><a href="{:U('order/sent', array('id'=>$vo['id']))}">发货</a></if>] -->
+                    [<a href="{:U('order/orderdetail', array('id'=>$vo['id']))}">订单详情</a>]
+                </td>
+            </tr>
+            </volist>
+        </tbody>
+    </table>
+</form>
+</empty>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+$(".submit").click(function(){
+    commonAjaxSubmit("{:U('Order/ordersearch')}");
+    return false;
+});
+</script>
+
+<div class="page">
+    {$page}
+</div>

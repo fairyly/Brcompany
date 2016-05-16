@@ -1,0 +1,39 @@
+<div class="Item hr">
+    <div class="current">检索/导出规则</div>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab" style="text-align:center;">
+    <form action="{:U('Finance/searchs')}" method="get">
+        <tr>
+            <td width="80">选择客服</td>
+            <td>
+                <select name="people">
+                    <option value="0" selected="selected">客官请选择</option>
+                <volist name="admin" id="vo">
+                    <option value="{$vo.id}">{$vo.remark}</option>
+                </volist>
+                </select>&nbsp;&nbsp;<font color="gray">如不选择默认显示总数据</font>
+            </td>
+        </tr>
+        <tr>
+            <td>时间区间</td>
+            <td>
+                始:<input class="input" type="text" name="timeStart" value="" id="" onclick="SelectDate(this,'yyyy-MM-dd hh:mm:ss')" placeholder="点击进行选择"/>
+                --终:<input class="input" type="text" name="timeStop" value="" id="" onclick="SelectDate(this,'yyyy-MM-dd hh:mm:ss')" placeholder="点击进行选择"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="btn">检索报表</button>
+            </td>
+        </tr>
+    </tr>
+    </form>
+</table>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+// $(".submit").click(function(){
+//     commonAjaxSubmit("{:U('Order/outputExl')}");
+//     return false;
+// });
+</script>

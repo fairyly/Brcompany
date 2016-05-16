@@ -1,0 +1,21 @@
+<div class="Item hr">
+    <div class="current">收入来源详情</div>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+    <tr>
+        <td>姓名：{$info.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            级别：<if condition="$info.agent_level eq 1"> 总代理</if>
+                  <if condition="$info.agent_level eq 2">一级代理</if>
+                  <if condition="$info.agent_level eq 3">二级代理</if>
+                  <if condition="$info.agent_level eq 4">特约代理</if>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            上级：{$info.superior}</td>
+    </tr>
+    <tr>
+        <td>
+            {$consume}
+            <div class="page">
+                {$page}
+            </div>
+        </td>
+    </tr>
+</table>

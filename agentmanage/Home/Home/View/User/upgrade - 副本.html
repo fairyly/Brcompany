@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>升级申请</title>
+<link href="__PUBLIC__/stylesheets/home/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/javascripts/home/functions.js" rel="stylesheet" type="text/css">
+<style type="text/css">
+*{ margin:0; padding:0;}
+a{ text-decoration:none;}
+body{ font-family:'Microsoft YaHei'; font-size:12px; background:#f1eff5;}
+.ding{ width:100%; margin:0 auto;}
+.ding h2{ width:100%;  background:#4bc1d2; text-align:center; height:50px; line-height:50px; color:#fff;}
+.ding1{ width:10px; margin-left:10px; float:left; color:#fff;}
+.ding2{ width:90%; margin:3% auto 0; background:#fff; overflow:hidden; padding:3%;}
+.ding2 h2{color:#4bc1d2; margin-top:3%;}
+.ding3{ color:#a5a8aa;}
+.form { margin-top:5%; border-top:1px solid #4bc1d2;}
+.form p{ margin-top:10%; color:#6b6b6b; }
+.top input,.top1 input{ width:70%; margin-top:3%; margin-left:2%; height:26px; border:1px solid #cdcdcd; border-radius:4px;}
+#form7 input,#form8 input{ width:70%; margin-top:3%; margin-left:2%; height:26px; border:1px solid #cdcdcd; border-radius:4px;}
+#form1,#form2,#form3,#form4,#form5,#form6,#form7,#form8,#form9,#mima,#mima1{ width:100%; background:url(__PUBLIC__/images/home/01_03.png) left center no-repeat; text-indent:12px; color:#000; font-size:14px;}
+#form7{width:100%; background:url(images/01_03.png) left center no-repeat; text-indent:12px; color:#000; font-size:14px;}
+.xuan{ margin:5% auto 0; color:#4bc1d2; font-size:16px; width:70%;}
+.dakuab{ width:85%; margin:1% auto 0; font-size:12px; color:#a5a8aa; overflow:hidden}
+#din{ position:relative;width:100%;height:50px; float:left; border:1px dashed #333; cursor:pointer}
+#din1,#din2,#din3,#din4{position:relative;width:100%;height:50px; float:left;  border:1px dashed #333; overflow:hidden; cursor:pointer}
+
+#preview,#preview1,#preview2,#preview3,#preview4{width:100px;height:50px;overflow:hidden;}
+#imghead,#imghead1,#imghead2,#imghead3,#imghead4 {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);}
+.file{ width:100%; height:50px; opacity:0; position:absolute; top:0; left:0; z-index:3}
+.file input{width:100%; height:50px; cursor:pointer;}
+#chong,#chong1,#chong2,#chong3,#chong4{ position:absolute; top:14px; right:60px; color:#4bc1d2; width:50px; font-size:12px; cursor:pointer;}
+#shan,#shan1,#shan2,#shan3,#shan4{ position:absolute; color:#F00; top:14px; right:20px; z-index:10; width:40px; cursor:pointer;}
+#tupian,#tupian1,#tupian2,#tupian3,#tupian4{ position:absolute; z-index:1; top:0px; left:0px;}
+#tupian i,#tupian1 i,#tupian2 i,#tupian3 i,#tupian4 i{ font-size:24px; margin:12px 0 0 12px; color:#999 }
+.tu{ width:90%; margin:5% auto 0;}
+#form12{width:100%;  color:#000; font-size:14px; overflow:hidden; margin-top:30%; text-indent:12px;}
+#form12 textarea{ width:90%; font-size:12px; margin-left:5%; margin-top:3%;}
+#form13{ width:100% ; margin:5% auto 0; border-top:1px solid #4bc1d2; padding-top:20px; text-align:center}
+#form13 input{ width:40%; border:none;  background:#4bc1d2; height:50px; font-size:24px; color:#FFF; border-radius:8px; }
+</style>
+
+</head>
+<body>
+<div class="ding">
+<h2><a href="#" class="ding1"> <i class="fa fa-arrow-left"></i></a>代理商管理系统</h2>
+</div>
+<div class="ding2">
+<h2>升级申请</h2>
+<div class="form">
+<form enctype="multipart/form-data">
+<div class="top">
+<p id="form6">申请升级级别</p>
+</div>
+<div class="xuan">
+<input type="radio" name="level" id="dian" value="1"/>
+<label for="dian">全国总代</label><br>
+<input type="radio" name="level" id="dian1" value="2"/>
+<label for="dian1">一级代理商</label><br>
+<input type="radio" name="level" id="dian2" value="3"/>
+<label for="dian2">二级代理商</label><br>
+<input type="radio" name="level" id="dian3" value="4"/>
+<label for="dian3">特约代理商</label>
+</div>
+<div class="top1">
+<p id="form9">打款截图</p>
+<span class="dakuab">微信“钱包”点击右上角有“交易记录”；支付宝左上角“账单”可查询交易记录</span>
+<div class="tu">
+<div id="din">
+<div id="preview">
+    <img id="imghead" width=50 height=50  >
+</div>
+     
+     <div class="file"> 
+    <input name="payment1" type="file" onchange="previewImage(this)" /> 
+    </div> 
+    <span id="chong" style="display:none">重新选择</span> 
+    <div id="tupian"><i class="fa fa-arrows"></i></div>
+    </div> 
+
+<div id="din1" style="display:none">
+<div id="preview1">
+    <img id="imghead1" width=50 height=50  >
+</div>
+     
+     <div class="file"> 
+    <input type="file" name="payment2" onchange="previewImage1(this)" /> 
+    </div> 
+    <span id="chong1" style="display:none">重新选择</span> 
+     <span id="shan1" style="display:none">&nbsp;&nbsp;删除</span>  
+    <div id="tupian1"><i class="fa fa-arrows"></i></div>
+    </div>     
+
+    
+    <div id="din2" style="display:none">
+<div id="preview2">
+    <img id="imghead2" width=50 height=50  >
+</div>
+     
+     <div class="file"> 
+    <input type="file" name="payment3" onchange="previewImage2(this)" /> 
+    </div> 
+    <span id="chong2" style="display:none">重新选择</span>  
+     <span id="shan2" style="display:none">&nbsp;&nbsp;删除</span>
+    <div id="tupian2"><i class="fa fa-arrows"></i></div>
+    </div>
+    
+    <div id="din3" style="display:none">
+<div id="preview3">
+    <img id="imghead3" width=50 height=50  >
+</div>
+     
+     <div class="file"> 
+    <input type="file" name="payment4" onchange="previewImage3(this)" /> 
+    </div> 
+    <span id="chong3" style="display:none">重新选择</span>
+     <span id="shan3" style="display:none">&nbsp;&nbsp;删除</span>  
+    <div id="tupian3"><i class="fa fa-arrows"></i></div>
+    </div>
+    
+    <div id="din4" style="display:none; ">
+<div id="preview4">
+    <img id="imghead4" width=50 height=50  >
+</div>
+     <div class="file"> 
+    <input type="file" name="payment5" onchange="previewImage4(this)" /> 
+    </div> 
+    <span id="chong4" style="display:none">重新选择</span>
+     <span id="shan4" style="display:none">&nbsp;&nbsp;删除</span>  
+    <div id="tupian4"><i class="fa fa-arrows"></i></div>
+    </div>
+ 
+ </div>
+ 
+<div id="form12">申请备注<br><textarea name="content" cols="60" rows="5" onKeyUp="if(this.value.length > 30) this.value=this.value.substr(0,40)">
+  </textarea>
+  </div>
+  
+<p id="form13"><input type="submit" class="submit" value="提交"></p>
+</form>
+</div>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+$(".submit").click(function()
+    commonAjaxSubmit("{:U('Index/upgradedeal')}");
+    return false;
+});
+         var din1=document.getElementById('din1');
+		 var shan1=document.getElementById('shan1');
+		 shan1.addEventListener('click',function(){
+			 din1.style.display='none'; 
+			  })
+	 
+	     var din2=document.getElementById('din2');
+		 var shan2=document.getElementById('shan2');
+		 shan2.addEventListener('click',function(){
+			 din2.style.display='none'; 
+			  }) 
+			  
+	     var din3=document.getElementById('din3');
+		 var shan3=document.getElementById('shan3');
+		 shan3.addEventListener('click',function(){
+			 din3.style.display='none'; 
+			  }) 
+			  
+	     var din4=document.getElementById('din4');
+		 var shan4=document.getElementById('shan4');
+		 shan4.addEventListener('click',function(){
+			 din4.style.display='none'; 
+			  })    
+                
+        function previewImage(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+		   var mei = document.getElementById('din');
+          var div = document.getElementById('preview');
+		  var chong=document.getElementById('chong');
+		  var tupian=document.getElementById('tupian');
+		   var din1=document.getElementById('din1');
+		  
+		   tupian.style.display='none';
+		  chong.style.display='block';
+		  din1.style.display='block';
+		 
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead>';
+              var img = document.getElementById('imghead');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+		               //图片上传预览    IE是用了滤镜。
+        function previewImage1(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+          var div = document.getElementById('preview1');
+		  var chong=document.getElementById('chong1');
+		  var tupian=document.getElementById('tupian1');
+		   var din1=document.getElementById('din1');
+		   var din2=document.getElementById('din2');
+		   var shan1=document.getElementById('shan1');
+		   tupian.style.display='none';
+		  chong.style.display='block';
+		  din2.style.display='block';
+		 shan1.style.display='block';
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead1>';
+              var img = document.getElementById('imghead1');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead1>';
+            var img = document.getElementById('imghead1');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+
+
+	 		                  //图片上传预览    IE是用了滤镜。
+        function previewImage2(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+          var div = document.getElementById('preview2');
+		  var chong=document.getElementById('chong2');
+		  var tupian=document.getElementById('tupian2');
+		  var din3=document.getElementById('din3');
+		 
+		  var shan2=document.getElementById('shan2');
+		  tupian.style.display='none';
+		  chong.style.display='block';
+		  shan2.style.display='block';
+		  din3.style.display='block';
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead2>';
+              var img = document.getElementById('imghead2');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead2>';
+            var img = document.getElementById('imghead2');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+		
+				                  //图片上传预览    IE是用了滤镜。
+        function previewImage3(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+          var div = document.getElementById('preview3');
+		  var chong=document.getElementById('chong3');
+		  var tupian=document.getElementById('tupian3');
+		  var shan3=document.getElementById('shan3');
+		   var din4=document.getElementById('din4');
+		   tupian.style.display='none';
+		   shan3.style.display='block';
+		  chong.style.display='block';
+		  din4.style.display='block';
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead3>';
+              var img = document.getElementById('imghead3');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead3>';
+            var img = document.getElementById('imghead3');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+		
+		
+				                  //图片上传预览    IE是用了滤镜。
+        function previewImage4(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+          var div = document.getElementById('preview4');
+		  var chong=document.getElementById('chong4');
+		  var tupian=document.getElementById('tupian4');
+		  var tshan4=document.getElementById('shan4');
+		   tupian.style.display='none';
+		  chong.style.display='block';
+		  shan4.style.display='block';
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead4>';
+              var img = document.getElementById('imghead4');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead4>';
+            var img = document.getElementById('imghead4');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+    
+
+</script>
+</html>

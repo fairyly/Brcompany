@@ -1,0 +1,245 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+.swiper-container {
+        max-width: 600px;
+        margin: 0px auto;
+}
+.swiper-slide{
+	text-align: center;
+	margin: 0px auto;
+}
+.swiper-slide img{
+    width:80%;
+}
+.indexnav{
+	width: 100%;
+	margin: 0px auto;
+}
+.shenqing,.chaxun{
+    display: inline-block;
+    vertical-align: top;
+    background-color: #0FC4D9;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    color: #fff;
+    width: 49%;
+    height: 100px;
+}
+.shenqing{
+	margin-right: 3px;
+}
+.shenqing a{
+	text-decoration: none;
+	color: #fff;
+}
+.shenqing span{
+	margin-left: 20px;
+	padding-top: 20px;
+}
+.chaxun{
+	margin-left: 3px;
+}
+.chaxun span{
+	margin-left: 20px;
+	padding-top: 20px;
+}
+.chaxun a{
+	text-decoration: none;
+	color: #fff;
+}
+.fhylogin,.sylogin{
+    display: inline-block;
+    vertical-align: top;
+    background-color: #368FF5;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    color: #fff;
+    width: 49%;
+    height: 100px;
+    margin-top: 10px;
+}
+.fhylogin{
+	margin-right: 3px;
+}
+.fhylogin a{
+	text-decoration: none;
+	color: #fff;
+}
+.sylogin{
+	margin-left: 3px;
+}
+.sylogin a{
+	text-decoration: none;
+	color: #fff;
+}
+/*引导页*/
+.in_main{
+ width:100%;
+ height:100%;
+ overflow:hidden;
+ position:relative;
+ max-width:600px;
+ margin:0 auto;
+}
+
+.y_main{
+  background:url(../images/y_back.jpg) left top no-repeat;
+  background-size:100% auto;
+}
+
+.y_main_content{
+ position:absolute;
+ width:100%;
+ height:auto;
+ left:0px;
+ bottom:20%;
+ margin:0px auto;
+}
+.y_main_content .fhcx a{
+ display:block;
+ width:85%;
+ height:90px;
+ margin:0 auto;
+ padding-top: 10px;
+ text-decoration:none;
+ color:white;
+ line-height:15px;
+ font-size:0.5em;
+ letter-spacing:2px;
+ border:2px solid #aca6a6;
+ text-align:center;
+ background-color: rgba(255,255,255,0);
+ border-radius: 5px;
+}
+.y_main_content .fhcx,.y_main_content .sycx{
+    display:inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin:0px auto;
+}
+.y_main_content .sycx a{
+ display:block;
+ width:85%;
+ height:90px;
+ margin:0 auto;
+ padding-top: 10px;
+ text-decoration:none;
+ color:white;
+ line-height:15px;
+ font-size:0.5em;
+ letter-spacing:2px;
+ border:2px solid #aca6a6;
+ text-align:center;
+ background-color: rgba(255,255,255,0);
+ border-radius: 5px;
+}
+.fwcx a{
+ display:block;
+ width:93%;
+ height:90px;
+ margin:0 auto;
+ padding-top: 10px;
+ text-decoration:none;
+ color:white;
+ line-height:15px;
+ font-size:0.5em;
+ letter-spacing:2px;
+ border:2px solid #aca6a6;
+ text-align:center;
+ background-color: rgba(255,255,255,0);
+ border-radius: 5px;
+}
+/*登录页*/
+.in_main_top{
+ width:100%;
+ height:60%;
+ position:relative;
+ top:0px;
+ left:0px;
+ overflow:hidden;
+}
+.in_main_top>img{
+ width:100%;
+ height:auto;
+}
+.in_main_bottom{
+ width:100%;
+ height:55%;
+ position:relative;
+ top:-13%;
+ left:0px;
+ z-index:1;
+ overflow:hidden;
+}
+.in_main_bottom>img{
+ width:100%;
+ height:auto;
+}
+.in_main_bottom_content{
+ position:absolute;
+ width:96%;
+ height:auto;
+ bottom:0px;
+ left:2%;
+}
+.in_main_bottom_content table{
+ border-collapse:collapse;
+ width:100%;
+}
+.in_main_bottom_content table tr{
+  height:45px;
+  width:100%;
+  border-bottom:1px solid #eaebeb;
+}
+.in_main_bottom_content .c_left{
+ width:65px;
+}
+.in_main_bottom_content .c_right{
+ width:auto;
+}
+.in_main_bottom_content table span{
+ display:block;
+ width:100%;
+ height:45px;
+}
+.in_main_bottom_content .c_left span{
+ background:url(../images/name.png) center center no-repeat;
+ background-size:25px auto;
+}
+.in_main_bottom_content .c_leftb span{
+ background:url(../images/pass.png) center center no-repeat;
+ background-size:25px auto;
+}
+.in_main_bottom_content table input{
+ width:100%;
+ display:block;
+ height:45px;
+ float:left;
+ margin-left:0px;
+ border:none;
+ background:#F7F7F7;
+ font-size:1em;
+ color:#009AFF;
+ letter-spacing:2px;
+}
+.in_main_bottom_content [type=submit]{
+ width:100%;
+ height:40px;
+ border:none;
+ background:#4BC1D2;
+ color:white;
+ font-size:1.1em;
+ margin-top:10px;
+ cursor:pointer;
+}
+.in_main_bottom_content p{
+  font-size:0.9em;
+  height:30px;
+  line-height:30px;
+  text-align:center;
+  width:100%;
+  color:#000;
+  margin-top:5px;
+}

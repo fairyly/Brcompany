@@ -1,0 +1,63 @@
+<div class="Item hr">
+    <!-- <span class="fr">
+        <form >姓名:
+            <input type="text" name="username" value="" size="10"/>      
+            <button class="btn submit">搜索</button> 
+        </form>
+    </span> -->
+    <div class="current">代理商升级列表</div>
+</div>
+<empty name="lists"> <font color="gray" size="8">暂时没有需要升级的代理商！</font> <else/>
+<form>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>姓名</td>
+                <td>升级前级别</td>
+                <td>升级后级别</td>
+                <td>打款截图</td>
+                <td>申请时间</td>
+                <td>备注</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="lists.list" id="vo">
+            <tr align="center">
+                <td>{$vo.id}</td>
+                <td>{$vo.name}</td>
+                <td>
+                    <if condition="$vo.ex_level eq 1"> 总代理</if>
+                    <if condition="$vo.ex_level eq 2">一级代理</if>
+                    <if condition="$vo.ex_level eq 3">二级代理</if>
+                    <if condition="$vo.ex_level eq 4">特约代理</if>
+                </td>
+                <td><if condition="$vo.up_level eq 1"> 总代理</if>
+                    <if condition="$vo.up_level eq 2">一级代理</if>
+                    <if condition="$vo.up_level eq 3">二级代理</if>
+                    <if condition="$vo.up_level eq 4">特约代理</if>
+                </td>
+                <td>{$vo.pic}</td>
+                <td>{$vo.up_time|date="Y-m-d H:i",###}</td>
+                <td>{$vo.up_note}</td>
+                <td>[<a href="{:U('agent/upgradeDeal', array('id'=>$vo['id'], 'uid'=>$vo['uid'], 'level'=>$vo['up_level'],'status'=>1))}">升级</a>]
+                    [<a href="{:U('agent/upgradeDeal', array('id'=>$vo['id'], 'uid'=>$vo['uid'], 'level'=>$vo['up_level'],'status'=>2))}">不升</a>]
+                </td>
+            </tr>
+            </volist>
+        </tbody>
+    </table>
+</form>
+</empty>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+$(".submit").click(function(){
+    commonAjaxSubmit("{:U('Agent/upgrade')}");
+    return false;
+});
+</script>
+
+<div class="page">
+    {$lists.show}
+</div>

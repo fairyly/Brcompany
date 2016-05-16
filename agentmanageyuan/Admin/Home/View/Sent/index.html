@@ -1,0 +1,93 @@
+<style type="text/css">
+/*table{margin:0 auto;border-collapse:collapse; }
+td, th{ width:10%; font-size:14px; padding:10px 0; text-align:center;border:1px solid #ddd; }
+th {background-color:#f4f4f4;} */
+/* input */
+td.input{ position:relative; }
+td input{ width:100%; border:1px solid #CF5C74; background:#F90; border-radius:4px; display:block; position:absolute; text-align:center; font-size:14px; left:0; top:0; padding:11px 0; margin:-1px 0 0 -1px; }
+td.hover{background:#eee;}
+</style>
+<div class="Item hr">
+    <span class="fr">现有快递公司<b>{$count}</b>个</span>
+    <div class="current">快递列表</div>
+</div>
+<form>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+        <thead>
+            <tr style="color:green">
+                <td>ID</td>
+                <td>快递名称</td>
+                <td>快递代号</td>
+                <td>状态</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="sents" id="sent">
+            <tr align="center">
+                <td>{$sent.id}</td>
+                <td class="edit">{$sent.company}</td>
+                <td>{$sent.company_code}</td>
+                <td><if condition="$sent['status'] eq 1">已启用<else/>已禁用</if></td>
+                <td>[ <a href="javascript:void(0);" value="{:U('Sent/toggleStatus', array('id' => $sent['id'], 'status' => $sent['status']))}" name="{$sent['company']}" status="{$sent['status']}" class="toggle"><if condition="$sent['status'] eq 1">禁用<else/>启用</if></a> ]</td>
+            </tr>
+            </volist>
+        </tbody>
+    </table>
+</form>
+
+<script type="text/javascript">
+$(function(){
+    $(".toggle").click(function(){
+        var url = $(this).attr("value");
+        var name = $(this).attr("name");
+        var status = $(this).attr("status") || 0;
+        status = status ? '启用' : '禁用';
+
+        popup.confirm('您确定'+ status + " <b>" + name + "</b> 节点吗？", '温馨提示',function(action){
+            if(action == 'ok'){
+                $.getJSON(url, function(json){
+                    if (json.status) {
+                        popup.success(json.info);
+                        setTimeout(function(){
+                            popup.close("asyncbox_success");
+                        },2000);
+                    } else {
+                        popup.error(json.info);
+                        setTimeout(function(){
+                            popup.close("asyncbox_error");
+                        },2000);
+                    }
+
+                    setTimeout(function(){
+                        top.window.location.reload();
+                    },1000);
+                });
+            }
+        });
+
+        return false;
+    });
+
+    $('.edit').click(function(){    
+        if(!$(this).is('.input')){    
+            $(this).addClass('input').html('<input type="text" value="'+ $(this).text() +'" />').find('input').focus().blur(function(){    
+                var thisid = $(this).parent().siblings("th:eq(0)").text();    
+                var thisvalue = $(this).val();    
+                var thisclass = $(this).parent().attr("class");
+                
+                $.ajax({    
+                  type: 'POST',    
+                  url: "{:U('update.php')}",   
+                  data: "thisid="+thisid+"&thisclass="+thisclass+"&thisvalue="+thisvalue    
+                });    
+                $(this).parent().removeClass('input').html($(this).val() || 0);    
+            });                        
+        }    
+    }).hover(function(){    
+        $(this).addClass('hover');    
+    },function(){    
+        $(this).removeClass('hover');    
+    });    
+});
+</script>

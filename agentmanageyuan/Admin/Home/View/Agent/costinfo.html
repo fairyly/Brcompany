@@ -1,0 +1,21 @@
+<div class="Item hr">
+    <div class="current">代理商消费详细信息</div>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+    <tr>
+        <td>姓名：{$info.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            级别：<if condition="$info.agent_level eq 1"> 总代理</if>
+                  <if condition="$info.agent_level eq 2">一级代理</if>
+                  <if condition="$info.agent_level eq 3">二级代理</if>
+                  <if condition="$info.agent_level eq 4">特约代理</if>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            上级：<a href="{:U('agent/detail', array('id'=>$info['fid']))}">{$info.fname}</a></td>
+    </tr>
+    <tr>
+        <td >总消费￥：<font color="red">{$info.cost_money}</font><br />
+            消费记录：<br />{$info.consume}
+            <div class="page">
+                {$page}
+            </div>
+        </td>
+    </tr>
+</table>

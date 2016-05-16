@@ -1,0 +1,47 @@
+<div class="Item hr">
+    <div class="current">检索结果</div>
+</div>
+<empty name="searchs.list"> <font color="red" size="5">没有查询到有效数据！！！</font> <else/>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>下单人</td>
+                <td>收件人</td>
+                <td>电话</td>
+                <td>地址</td>
+                <td>数量6p/6/5/4</td>
+                <td>备注</td>
+                <td>时间</td>
+                <td>打款截图</td>
+                <td>管理</td>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="searchs.list" id="vo">
+                <tr align="center">
+                    <td>{$vo.id}</td>
+                    <td><a href="{:U('agent/detail', array('id'=>$vo['uid']))}">{$vo.name}</a></td>
+                    <td>{$vo.recman}</td>
+                    <td>{$vo.rectel}</td>
+                    <td>{$vo.recadd}</td>
+                    <td>{$vo.sixp}/{$vo.six}/{$vo.five}/{$vo.four}</td>
+                    <td>{$vo.note}</td>
+                    <td>{$vo.create_time|date="Y-m-d H:i",###}</a></td>
+                    <td>{$vo.pic}</td>
+                    <td>
+                        <if condition="$vo['check'] eq 1"><font color="green">已审核</font><else/>
+                        [<a href="{:U('order/ordercheck', array('id'=>$vo['id']))}">审核</a>]</if>
+                        <if condition="$vo['sent'] eq 1"><font color="green">已发货</font><else/>
+                        [<a href="{:U('order/sent', array('id'=>$vo['id']))}">发货</a>]</if>
+                        [<a href="{:U('order/orderdetail', array('id'=>$vo['id']))}">详细信息</a>]
+                        [<a href="{:U('order/orderdel', array('id'=>$vo['id']))}">删除</a>]
+                    </td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+</empty>
+<div class="page">
+    {$searchs.show}
+</div>

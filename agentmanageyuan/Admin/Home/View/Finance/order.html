@@ -1,0 +1,85 @@
+<div class="Item hr">
+    <!-- <span class="fr">
+        <form action="{:U('Agent/searchs')}" method="get">姓名/电话/微信:
+            <input type="text" name="username" value="" size="10"/>
+            <button class="btn submit">搜索</button> 
+        </form>
+    </span> -->
+    <div class="current">财务管理</div>
+</div>
+<p style="margin-top:10px;margin-left:47%;"><font size="5px">日报表</font></p>
+    <table width="100%" border="1px solid black" cellspacing="0" cellpadding="0" class="tab" style="border-collapse:collapse;text-align:center;border-left-style: none; border-right-style: none;table-layout:fixed;">
+        <thead>
+            <tr>
+                <th></th>
+                <th>收入</th>
+                <th>环比</th>
+                <th>同比</th>
+                <th>订单数</th>
+                <th>环比</th>
+                <th>同比</th>
+                <th>6p</th>
+                <th>6</th>
+                <th>5</th>
+                <th>4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <span>数据周期：<font color="green">{$day.time}</font></span>
+            {$day.data}
+        </tbody>
+    </table>
+
+<p style="margin-top:10px;margin-left:47%;"><font size="5px">周报表</font></p>
+    <table width="100%" border="1px solid black" cellspacing="0" cellpadding="0" class="tab" style="border-collapse:collapse;text-align:center;border-left-style: none; border-right-style: none;table-layout:fixed;">
+        <thead>
+            <tr>
+                <th></th>
+                <th>收入</th>
+                <th>环比</th>
+                <th>同比</th>
+                <th>订单数</th>
+                <th>环比</th>
+                <th>同比</th>
+                <th>6p</th>
+                <th>6</th>
+                <th>5</th>
+                <th>4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <span>数据周期：<font color="green">{$week.time}</font></span>
+            {$week.data}
+        </tbody>
+    </table>
+
+<p style="margin-top:10px;margin-left:47%;"><font size="5px">月报表</font></p>
+    <table width="100%" border="1px solid black" cellspacing="0" cellpadding="0" class="tab" style="border-collapse:collapse;text-align:center;border-left-style: none; border-right-style: none;table-layout:fixed;">
+        <thead>
+            <tr>
+                <th></th>
+                <th>收入</th>
+                <th>环比</th>
+                <th>同比</th>
+                <th>订单数</th>
+                <th>环比</th>
+                <th>同比</th>
+                <th>6p</th>
+                <th>6</th>
+                <th>5</th>
+                <th>4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <span>数据周期：<font color="green">{$month.time}</font></span>
+            {$month.data}
+        </tbody>
+    </table>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+// var id = $(this).attr("value");
+// $(".check").click(function(){
+//     commonAjaxSubmit("{:U('Agent/check')}");
+//     return false;
+// });
+</script>

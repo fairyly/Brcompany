@@ -1,0 +1,101 @@
+<div class="contentArea">
+    <div class="Item hr">
+    <span class="fr">
+        <!-- <button class="btn"><if condition="$detail['sent'] eq 1"><font color="green">已发货</font><else/><font color="red">未发货</font></if></button> -->
+        <!-- <form ><button class="btn submit">打印订单</button></form> -->
+    </span>
+    <div class="current">订单详情/配货单</div><div class="current">编号：{$detail.create_time|date="YmdHi",###}</div>
+    </div>
+    <form>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1" >
+            <tr>
+                <th width="20">下单人：</th><td>{$detail.name}</td>
+            </tr>
+            <tr>
+                <th width="20">代理级别：</th>
+                <td>
+                    <if condition="$detail.agent_level eq 1"> 总代理</if>
+                    <if condition="$detail.agent_level eq 2">一级代理</if>
+                    <if condition="$detail.agent_level eq 3">二级代理</if>
+                    <if condition="$detail.agent_level eq 4">特约代理</if>
+                </td>
+            </tr>
+            <tr>
+                <th width="20">上级：</th><td>{$detail.fid}</td>
+            </tr>
+            <if condition="$detail.sent eq 1">
+                <tr><th width="20">收件人：</th><td>{$detail.recman}</td></tr>
+                <tr><th width="20">收件人电话：</th><td>{$detail.rectel}</td></tr>
+                <tr><th width="20">收件人地址：</th><td>{$detail.recadd}</td></tr>
+                <tr><th width="20">配货比6p/6/5/4：</th>
+                    <td width="20">【6p/6ps：{$detail.sixp}】---&nbsp;&nbsp;---【6/6s：{$detail.six}】---&nbsp;&nbsp;---【5/5s：{$detail.five}】---&nbsp;&nbsp;---【4/4s：{$detail.four}】</td><td width="20"></td><td width="20"></td><td width="20"></td></tr>
+                <tr><th width="20">消费金额：</th><td>{$detail.cost_money}</td></tr>
+                <tr><th width="20">运费：</th><td>{$detail.freight_charge}</td></tr>
+                <tr><th width="20">收入来源：</th><td>{$detail.revenue_source}</td></tr>
+                <tr><th width="20">备注：</th><td>{$detail.note}</td></tr>
+            <else />
+                <tr>
+                    <th width="20">收件人：</th>
+                    <td><input class="input" name="recman" type="text" size="30" value="{$detail.recman}"/></td>
+                </tr>
+                <tr>
+                    <th width="20">收件人电话：</th>
+                    <td><input class="input" name="rectel" type="text" size="30" value="{$detail.rectel}"/></td>
+                </tr>
+                <tr>
+                    <th width="20">收件人地址：</th>
+                    <td><input class="input" name="recadd" type="text" size="50" value="{$detail.recadd}"/></td>
+                </tr>
+                <tr>
+                    <th width="80">数量：</th>
+                    <td style="width:180px;float:left;">6p/6ps:<input class="input" name="sixp" type="text" size="10" value="{$detail.sixp}" /></td>
+                    <td style="width:180px;float:left;">6/6s:<input class="input" name="six" type="text" size="10" value="{$detail.six}" /></td>
+                    <td style="width:180px;float:left;">5/5s:<input class="input" name="five" type="text" size="10" value="{$detail.five}" /></td>
+                    <td style="width:200px;float:left;">4/4s:<input class="input" name="four" type="text" size="10" value="{$detail.four}" /></td>
+                </tr>
+                <tr>
+                    <th width="20">消费金额：</th>
+                    <td><input class="input" name="money" type="text" size="30" value="{$detail.cost_money}"/></td>
+                </tr>
+                <tr>
+                    <th width="20">运费：</th>
+                    <td><input class="input" name="charge" type="text" size="30" value="{$detail.freight_charge}"/></td>
+                </tr>
+                <tr>
+                    <th width="20">收入来源：</th>
+                    <td><input class="input" name="source" type="text" size="30" value="{$detail.revenue_source}"/></td>
+                </tr>
+                <tr>
+                    <th width="20">备注：</th>
+                    <td><input class="input" name="note" type="text" size="30" value="{$detail.note}"/></td>
+                </tr>
+            </if>
+            <tr>
+                <th width="20">打款截图：</th><td>{$detail.pic}</td>
+            </tr>
+            <tr>
+                <th width="20">操作人员：</th><td>{$detail.operate_people}</td>
+            </tr>
+            <tr>
+                <th width="20">审核状态：</th><td>[<if condition="$detail.check eq 1"><font color="green">已审核</font><else/><font color="red">未审核</font></if>]</td>
+            </tr>
+            <tr>
+                <th width="20">发货状态/信息：<td>[<if condition="$detail.sent eq 1"><font color="green">已发货</font>]<font color="green"><br/>快递公司：{$detail.sent_company}<br/>快递单号：{$detail.sent_number}</font></td><else/><font color="red">未发货</font>]</if></td>
+            </tr>
+        </table>
+    </form>
+    <div class="commonBtnArea" >
+        <button class="btn upsubmit">更新</button>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">*为必填项</font>
+    </div>
+</div>
+
+<script type="text/javascript">
+// $(".submit").click(function(){
+//     commonAjaxSubmit("{:U('Agent/printr')}");
+//     return false;
+// });
+$(".upsubmit").click(function(){
+    commonAjaxSubmit("{:U('Agent/uporddet',array('id'=>$detail['id']))}");
+    return false;
+});
+</script>

@@ -1,0 +1,128 @@
+<div class="Item hr">
+    <!-- <span class="fr">
+        <form >姓名/电话:
+            <input type="text" name="username" value="" size="10"/>      
+            <button class="btn submit">搜索</button> 
+        </form>
+    </span> -->
+    <div class="current">订单审核列表</div>
+</div>
+<empty name="order"> <font color="gray" size="8">暂时没有需要审核的订单！</font> <else/>
+<form>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td width="5%">下单人</td>
+                <td width="5%">代理级别</td>
+                <td width="5%">上级</td>
+                <td width="7%">下单时间</td>
+                <td width="5%">收件人</td>
+                <td width="3%">收件人电话</td>
+                <td>收件人地址</td>
+                <td>配货比6p/6/5/4</td>
+                <td width="7%">打款截图</td>
+                <td>备注</td>
+                <td width="7%">管理</td>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="order" id="vo">
+            <tr align="center">
+                <td>{$vo.id}</td>
+                <td>{$vo.name}</td>
+                <td>
+                    <if condition="$vo.agent_level eq 1"> 总代理</if>
+                    <if condition="$vo.agent_level eq 2">一级代理</if>
+                    <if condition="$vo.agent_level eq 3">二级代理</if>
+                    <if condition="$vo.agent_level eq 4">特约代理</if>
+                </td>
+                <td>{$vo.fid}</td>
+                <td>{$vo.create_time|date="Y-m-d H:i",###}</td>
+                <td>{$vo.recman}</td>
+                <td>{$vo.rectel}</td>
+                <td title="{$vo.recadd}">{$vo.recadd}</td>
+                <td>{$vo.sixp}/{$vo.six}/{$vo.five}/{$vo.four}</td>
+                <td>{$vo.pic}</td>
+                <td width="20%">{$vo.note}</td>
+                <td>[<a href="{:U('order/ordercheck', array('id'=>$vo['id']))}" id="check">审核</a></if>]
+                    <!-- [<a href="{:U('order/orderdel', array('id'=>$vo['id']))}" id="delete" onclick="return confirmAct();">删除</a>] -->
+                    [<a href="javascript:void(0);" value="{:U('order/orderdel', array('id' => $vo['id']))}" name="{$vo['name']}-{$vo['id']}" class="delete">删除</a>]
+                </td>
+            </tr>
+            </volist>
+        </tbody>
+    </table>
+</form>
+</empty>
+
+<div class="page">
+    {$page}
+</div>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+function confirmAct() 
+{ 
+    if(confirm('确定要取消授权吗?')) 
+    { 
+        return true; 
+    } 
+    return false; 
+}
+$(function(){
+    $(".delete").click(function(){
+        var url = $(this).attr("value");
+        var name = $(this).attr("name");
+
+        popup.confirm('您确定删除'+ name + "</b> 订单吗？", '温馨提示',function(action){
+            if(action == 'ok'){
+                $.getJSON(url, function(json){
+                    if (json.status) {
+                        popup.success(json.info);
+                        setTimeout(function(){
+                            popup.close("asyncbox_success");
+                        },2000);
+                    } else {
+                        popup.error(json.info);
+                        setTimeout(function(){
+                            popup.close("asyncbox_error");
+                        },2000);
+                    }
+
+                    setTimeout(function(){
+                        top.window.location.reload();
+                    },1000);
+                });
+            }
+        });
+
+        return false;
+    });
+
+    // $('.edit').click(function(){    
+    //     if(!$(this).is('.input')){    
+    //         $(this).addClass('input').html('<input type="text" value="'+ $(this).text() +'" />').find('input').focus().blur(function(){    
+    //             var thisid = $(this).parent().siblings("th:eq(0)").text();    
+    //             var thisvalue = $(this).val();    
+    //             var thisclass = $(this).parent().attr("class");
+                
+    //             $.ajax({    
+    //               type: 'POST',    
+    //               url: "{:U('update.php')}",   
+    //               data: "thisid="+thisid+"&thisclass="+thisclass+"&thisvalue="+thisvalue    
+    //             });    
+    //             $(this).parent().removeClass('input').html($(this).val() || 0);    
+    //         });                        
+    //     }    
+    // }).hover(function(){    
+    //     $(this).addClass('hover');    
+    // },function(){    
+    //     $(this).removeClass('hover');    
+    // });    
+});
+
+$(".check").click(function(){
+    commonAjaxSubmit("{:U('order/ordersearch')}");
+    return false;
+});
+</script>

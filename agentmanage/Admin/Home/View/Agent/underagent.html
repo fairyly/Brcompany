@@ -1,0 +1,22 @@
+<div class="Item hr">
+    <div class="current">下属代理商详情</div>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+    <tr>
+        <td>姓名：{$info.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            级别：<php>if($info['agent_level']==1){echo'总代理';}elseif($info['agent_level']==2){echo'一级代理';}elseif($info['agent_level']==3){echo'二级代理';}else{echo'特约代理';}</php>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上级：{$info.superior}</td>
+    </tr>
+    <tr>
+        <td>招商<php>if($info['level']==1){echo'总';}elseif($info['level']==2){echo'一级';}elseif($info['level']==3){echo'二级';}else{echo'特约';}</php>代理：{$info.count}人</td>
+    </tr>
+    <tr>
+        <td>
+            <volist name="agent['list']" id="vo">
+                {$vo.create_time|date="Y-m-d H:i",###}&nbsp;&nbsp;<a href="{:U('Agent/detail', array('id'=>$vo['id']))}"><font color="red">{$vo.name}</font></a>&nbsp;&nbsp;成为了您下属的<php>if($info['level']==1){echo'总';}elseif($info['level']==2){echo'一级';}elseif($info['level']==3){echo'二级';}else{echo'特约';}</php>代理<br />
+            </volist>
+            <div class="page">
+                {$agent.show}
+            </div>
+        </td>
+    </tr>
+</table>

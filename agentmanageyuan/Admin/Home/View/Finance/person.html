@@ -1,0 +1,39 @@
+<div class="Item hr">
+    <div class="current">个人订单报表详细</div>
+</div>
+<p style="margin-top:10px;margin-left:47%;"><font size="5px">{$count.name}报表</font></p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab" style="border-collapse:collapse;text-align:center;border-left-style: none; border-right-style: none;">
+        <tbody>
+            <tr bgcolor="#ccc">
+                <td colspan="2">总收入</td><td colspan="2">{$count.count}</td>
+            </tr>
+            <tr>
+                <td colspan="2">总订单</td><td colspan="2">{$count.money}</td>
+            </tr>
+            <tr bgcolor="#ccc">
+                <td>6p:{$count.sixp}</td><td>6:{$count.six}</td><td>5:{$count.five}</td><td>4:{$count.four}</td>
+            </tr>
+            <tr>
+                <td>收入明细：</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align:left;">
+                    <volist name="detail.list" id="vo">
+                        {$vo.name}--{$vo.create_time|date="Y-m-d H:i:s",###}--6p:{$vo.sixp}/6:{$vo.six}/5:{$vo.five}/4:{$vo.four}--{$vo.cost_money}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.check}<br />
+                    </volist>
+                    <div class="page">
+                        {$detail.show}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<!-- 提交代理商查询  -->
+<script type="text/javascript">
+// var id = $(this).attr("value");
+// $(".check").click(function(){
+//     commonAjaxSubmit("{:U('Agent/check')}");
+//     return false;
+// });
+</script>

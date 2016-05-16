@@ -1,0 +1,782 @@
+<?php if (!defined('THINK_PATH')) exit();?>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<link rel="stylesheet" media="screen" href="/agentmanageyuan/Public/stylesheets/home/style1.css" debug="false" />
+<script src="/agentmanageyuan/Public/javascripts/home/jquery.js"></script>
+<script src="/agentmanageyuan/Public/javascripts/home/main.js"></script>
+</head>
+<body>
+<div class="header">
+    <a href="javascript:history.back()"></a>
+	 T-star代理商管理系统
+ </div>
+<div class="main_dj">
+  <div class="main_dj_title">
+		<p>直属代理在线下单</p>
+		<span>由于手机问题导致提交失败，请联系您的客服。</span>
+  </div>
+  <div class="main_dj_content">
+      <form action="<?php echo U('User/onlineadd',array('id'=>$id, code=>$code));?>" method="post" enctype="multipart/form-data">
+	     <div class="main_content_top">
+	     	<p>选择对接助理<i>*</i></p>
+			<select name="people" class="select_agent" >
+				<option value="0" selected="selected" >请选择</option>
+				<?php if(is_array($admin)): $i = 0; $__LIST__ = $admin;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["remark"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+			</select>
+			 <p>收件人姓名<i>*</i></p>
+			 <input type="text" name="entry_name" placeholder="请输入您的姓名"/>
+			 <span class="yanzheng"><i>&nbsp;</i>请填写姓名</span>
+			 <p>收件人手机号<i>*</i></p>
+			 <input type="text" name="entry_tel" placeholder="请输入您的手机号" />
+			 <span class="yanzheng"><i></i>请填写手机号</span>
+			 <p>收件地址<i>*</i></p>
+			 <input type="text" name="entry_add" placeholder="请填写收件地址" />
+			 <span class="yanzheng"><i></i>请填写收件地址</span>
+			 <!-- <p>授权代理商姓名<i>*</i></p>
+			 <span style="font-size:0.9em;">仅限总部直属代理商下单使用</span>
+			 <input type="text" placeholder="" />
+			 <span class="yanzheng"><i></i>请填写授权代理姓名</span> -->
+		 </div>
+		 <div class="main_content_bottom">
+		    <!-- <p>代理级别<i>*</i></p>
+			<span>总代600盒，一级120盒，二级20盒，特约4盒</span>
+			<div class="main_sel main_se1_1">
+			    <p><input type="radio" name="s" /><span>全国总代</span></p>
+				<p><input type="radio" name="s" /><span>一级代理商</span></p>
+				<p><input type="radio" name="s" /><span>一级代理商</span></p>
+				<p><input type="radio" name="s" /><span>特约代理商</span></p>
+			</div> -->
+			<p>备注</p>
+			<span>特殊情况请在此处填写,例如:快递</span>
+			<input type="text" name="entry_note" />
+			<p>上传支付截图<i>*</i></p>
+			<span>上传支付截图和聊天记录</span>
+            <div class="up_img">
+                     <div class="tu">
+						   <div class="din">
+								<div id="preview">
+									<img id="imghead" width=50 height=50  >
+								</div>
+									 
+									 <div class="file"> 
+									   <input type="file" name="payment1" onchange="previewImage(this)" /> 
+									</div> 
+									<span id="chong" style="display:none">重新选择</span>  
+									<div id="tupian"><img src="/agentmanageyuan/Public/images/home/plus.png"/><span style="display:block;float:right;font-size:0.7em;line-height:50px;text-indent:10px;">请选择上传文件(最多5个),限制每个20MB以内</span></div>
+							</div> 
+
+							<div id="din1" style="display:none">
+								<div id="preview1">
+									<img id="imghead1" width=50 height=50  >
+								</div>
+							 
+								 <div class="file"> 
+								<input type="file" name="payment2" onchange="previewImage1(this)" /> 
+								</div> 
+								<span id="chong1" style="display:none">重新选择</span> 
+								<span id="shan1" style="display:none">删除</span>
+								<div id="tupian1"><img src="/agentmanageyuan/Public/images/home/plus.png"/><span style="display:block;float:right;font-size:0.7em;line-height:50px;text-indent:10px;">请选择上传文件(最多5个),限制每个20MB以内</span></div>
+							</div>     
+
+							
+							<div id="din2" style="display:none">
+								<div id="preview2">
+									<img id="imghead2" width=50 height=50  >
+								</div>
+							 
+								 <div class="file"> 
+								<input type="file" name="payment3" onchange="previewImage2(this)" /> 
+								</div> 
+								<span id="chong2" style="display:none">重新选择</span>
+								<span id="shan2" style="display:none">删除</span>  
+								<div id="tupian2"><img src="/agentmanageyuan/Public/images/home/plus.png"/><span style="display:block;float:right;font-size:0.7em;line-height:50px;text-indent:10px;">请选择上传文件(最多5个),限制每个20MB以内</span></div>
+							</div>
+							
+							<div id="din3" style="display:none">
+								<div id="preview3">
+									<img id="imghead3" width=50 height=50  >
+								</div>
+								 
+								 <div class="file"> 
+								<input type="file" name="payment4" onchange="previewImage3(this)" /> 
+								</div> 
+								<span id="chong3" style="display:none">重新选择</span> 
+								<span id="shan3" style="display:none">删除</span> 
+								<div id="tupian3"><img src="/agentmanageyuan/Public/images/home/plus.png"/><span style="display:block;float:right;font-size:0.7em;line-height:50px;text-indent:10px;">请选择上传文件(最多5个),限制每个20MB以内</span></div>
+							</div>
+							
+							<div id="din4" style="display:none; ">
+								<div id="preview4">
+									<img id="imghead4" width=50 height=50  >
+								</div>
+								<div class="file"> 
+									<input type="file" name="payment5" onchange="previewImage4(this)" /> 
+								</div> 
+								   <span id="chong4" style="display:none">重新选择</span> 
+								   <span id="shan4" style="display:none">删除</span> 
+								<div id="tupian4"><img src="/agentmanageyuan/Public/images/home/plus.png"/><span style="display:block;float:right;font-size:0.7em;line-height:50px;text-indent:10px;">请选择上传文件(最多5个),限制每个20MB以内</span></div>
+							</div>
+						</div>	
+				<span class="yanzheng"><i></i>请选择打款截图</span>
+            </div>	
+           <div class="chanping">
+		     <p>配货比例</p>
+			 <span style="padding-bottom:10px;">建议配货比例：200/200/160/40</span>
+			  <ul>
+			    <li class="chanping_box box1">
+						<img src="/agentmanageyuan/Public/images/home/6sp.jpg" />
+						<span class="b_title">iPhone6 plus/6s plus</span>
+						<div class="chanp_box_bottom">
+						  <div class="chanp_box_bottom_left">
+							 <span>￥<i>10.00</i></span>
+							 <!-- <p>库存:<span>66666</span>件</p> -->
+						  </div>
+						  <div class="chanp_box_bottom_right">
+							  <div class="j">-</div>
+							  <input name="sixp" class="s" value="0" autocomplete="off" readonly="readonly"/>
+							  <div class="jia">+</div>
+						  </div>
+						</div>
+			    </li>
+				
+				<li class="chanping_box box2">
+						<img src="/agentmanageyuan/Public/images/home/6s.jpg" />
+						<span class="b_title">iPhone6 /6s </span>
+						<div class="chanp_box_bottom">
+						  <div class="chanp_box_bottom_left">
+							 <span>￥<i>10.00</i></span>
+							 <!-- <p>库存:<span>66666</span>件</p> -->
+						  </div>
+						  <div class="chanp_box_bottom_right">
+							  <div class="j">-</div>
+							  <input name="six" class="s" value="0" autocomplete="off" readonly="readonly"/>
+							  <div class="jia">+</div>
+						  </div>
+						</div>
+			    </li>
+				
+				<li class="chanping_box box3">
+						<img src="/agentmanageyuan/Public/images/home/5s.jpg" />
+						<span class="b_title">iPhone5 /5s</span>
+						<div class="chanp_box_bottom">
+						  <div class="chanp_box_bottom_left">
+							 <span>￥<i>10.00</i></span>
+							 <!-- <p>库存:<span>66666</span>件</p> -->
+						  </div>
+						  <div class="chanp_box_bottom_right">
+							  <div class="j">-</div>
+							  <input name="five" class="s" value="0" autocomplete="off" readonly="readonly"/>
+							  <div class="jia">+</div>
+						  </div>
+						</div>
+			    </li>
+				
+				<li class="chanping_box box4">
+						<img src="/agentmanageyuan/Public/images/home/4s.jpg" />
+						<span class="b_title">iPhone4 /4s</span>
+						<div class="chanp_box_bottom">
+						  <div class="chanp_box_bottom_left">
+							 <span>￥<i>10.00</i></span>
+							 <!-- <p>库存:<span>66666</span>件</p> -->
+						  </div>
+						  <div class="chanp_box_bottom_right">
+							  <div class="j">-</div>
+							  <input name="four" class="s" value="0" autocomplete="off" readonly="readonly"/>
+							  <div class="jia">+</div>
+						  </div>
+						</div>
+			    </li>
+			  
+			  </ul>
+			 <div class="heji" style="display:none;">
+			    <h2>配货比例</h2>
+				
+				<div class="heji_box boxb1" style="display:none">
+				   <span>'+ti+'</span>
+				   <p>￥<span class="jiage"></span>件 X <span class="shu"></span></p>
+				   <p>￥<span class="he_1"></span></p>
+				</div>
+				
+				<div class="heji_box boxb2" style="display:none">
+				   <span>'+ti+'</span>
+				   <p>￥<span class="jiage"></span>件 X <span class="shu"></span></p>
+				   <p>￥<span class="he_1"></span></p>
+				</div>
+				
+				<div class="heji_box boxb3" style="display:none">
+				   <span>'+ti+'</span>
+				   <p>￥<span class="jiage"></span>件 X <span class="shu"></span></p>
+				   <p>￥<span class="he_1"></span></p>
+				</div>
+				<div class="heji_box boxb4" style="display:none">
+				   <span>'+ti+'</span>
+				   <p>￥<span class="jiage"></span>件 X <span class="shu"></span></p>
+				   <p>￥<span class="he_1"></span></p>
+				</div>
+				<div class="heji_bottom"><p><i>合计 :</i> <span>￥<i>0</i></span></p></div>
+			 </div>
+		   </div>
+
+            <input type="submit" class="submit"  value="提 交" />			
+		</div>
+	  </form>
+  </div>
+</div>
+<div class="ps_img">
+      <img src="#" />
+	  <span></span>
+</div>
+<script>
+    $(document).ready(function(){
+	<!---单选样式按钮--->
+	  $(".main_se1_1 input").click(function(){
+	    if($(this).attr("checked")=="checked"){
+		   $(".main_se1_1 p").css({"background":"url(/agentmanageyuan/Public/images/home/iconfont-danxuanweixuanzhong.png) left center no-repeat","backgroundSize":"20px auto"});
+		   $(this).parent("p").css({"background":"url(/agentmanageyuan/Public/images/home/iconfont-radiochecked.png) left center no-repeat","backgroundSize":"20px auto"});
+		}
+	  })
+	  
+	  $(".main_sel_2 input").click(function(){
+	    if($(this).attr("checked")=="checked"){
+		   $(".main_sel_2 p").css({"background":"url(/agentmanageyuan/Public/images/home/iconfont-danxuanweixuanzhong.png) left center no-repeat","backgroundSize":"20px auto"});
+		   $(this).parent("p").css({"background":"url(/agentmanageyuan/Public/images/home/iconfont-radiochecked.png) left center no-repeat","backgroundSize":"20px auto"});
+		}
+	  })
+	  
+	  $(".up_img_box img").click(function(){
+	    var up_img=$(this).attr("src");
+		$(".ps_img").css("display","block");
+		$(".ps_img img").attr("src",up_img);
+		$("body").css({"height":"100%","overflow":"hidden"})
+	    var up_imgheight=$(".ps_img img").height();
+		var bodyh=window.innerHeight;
+		$(".ps_img img").css("marginTop",(bodyh-up_imgheight)/2)
+	  })
+	  $(".ps_img").click(function(){
+	   $(this).css("display","none")
+	   $("body").css({"height":"auto","overflow":"auto"})
+	  })
+	  
+	  $(".chanping_box img").click(function(){
+	    var up_img=$(this).attr("src");
+		var up_title=$(this).siblings("span").text();
+		$(".ps_img").css("display","block");
+		$(".ps_img img").attr("src",up_img);
+		$(".ps_img span").text(up_title);
+		$("body").css({"height":"100%","overflow":"hidden"})
+	    var up_imgheight=$(".ps_img img").height();
+		var bodyh=window.innerHeight;
+		$(".ps_img img").css("marginTop",(bodyh-up_imgheight)/2)
+	  })
+	  $(".ps_img").click(function(){
+	   $(this).css("display","none")
+	   $("body").css({"height":"auto","overflow":"auto"})
+	  })
+	  $("[type=text]").blur(function(){
+	    if($(this).val()==""){
+		  $(this).next(".yanzheng").css("display","block")
+		  $(this).css("border","1px solid #FF2851")
+		}
+		else{
+		  $(this).next(".yanzheng").css("display","none")
+		  $(this).css("border","1px solid #C3C9D0")
+		}
+	  })
+	})
+
+</script>
+	 <!---图片上穿-->
+	 <script type="text/javascript">
+var   flag1=0;   
+  var   flag2=0;   
+    
+  function   NumberInc()   
+  {   
+      if(flag1==1   &&   flag2==1)   
+              {alert("Error!");}   
+      else   
+      {   
+              if(flag1==1)   
+              {   
+                  document.all.TextBox1.value++;   
+                  setTimeout("NumberInc()",100);   
+              }   
+              if(flag2==1)   
+              {   
+                  document.all.TextBox1.value--;   
+                  setTimeout("NumberInc()",100);   
+              }   
+      }   
+  }   
+    
+  function   md(obj)   
+  {   
+    if(obj.id=="Button1")   flag1=1;   
+    if(obj.id=="Button2")   flag2=1;   
+    NumberInc();   
+  }   
+    
+  function   mo(obj)   
+  {   
+    if(obj.id=="Button1")   flag1=0;   
+    if(obj.id=="Button2")   flag2=0;   
+  }   
+ var   flag3=0;   
+  var   flag4=0;           
+  function   NumberInc1()   
+  {   
+      if(flag3==1   &&   flag4==1)   
+              {alert("Error!");}   
+      else   
+      {   
+              if(flag3==1)   
+              {   
+                  document.all.TextBox2.value++;   
+                  setTimeout("NumberInc1()",100);   
+              }   
+              if(flag4==1)   
+              {   
+                  document.all.TextBox2.value--;   
+                  setTimeout("NumberInc1()",100);   
+              }   
+      }   
+  }   
+    
+  function   md1(obj)   
+  {   
+    if(obj.id=="Button3")   flag3=1;   
+    if(obj.id=="Button4")   flag4=1;   
+    NumberInc1();   
+  }   
+    
+  function   mo1(obj)   
+  {   
+    if(obj.id=="Button3")   flag3=0;   
+    if(obj.id=="Button4")   flag4=0;   
+  } 
+  
+   var   flag5=0;   
+  var   flag6=0;           
+  function   NumberInc2()   
+  {   
+      if(flag5==1   &&   flag6==1)   
+              {alert("Error!");}   
+      else   
+      {   
+              if(flag5==1)   
+              {   
+                  document.all.TextBox3.value++;   
+                  setTimeout("NumberInc2()",100);   
+              }   
+              if(flag6==1)   
+              {   
+                  document.all.TextBox3.value--;   
+                  setTimeout("NumberInc2()",100);   
+              }   
+      }   
+  }   
+    
+  function   md2(obj)   
+  {   
+    if(obj.id=="Button5")   flag5=1;   
+    if(obj.id=="Button6")   flag6=1;   
+    NumberInc2();   
+  }   
+    
+  function   mo2(obj)   
+  {   
+    if(obj.id=="Button5")   flag5=0;   
+    if(obj.id=="Button6")   flag6=0;   
+  } 
+  
+   var   flag7=0;   
+  var   flag8=0;           
+  function   NumberInc3()   
+  {   
+      if(flag7==1   &&   flag8==1)   
+              {alert("Error!");}   
+      else   
+      {   
+              if(flag7==1)   
+              {   
+                  document.all.TextBox4.value++;   
+                  setTimeout("NumberInc3()",100);   
+              }   
+              if(flag8==1)   
+              {   
+                  document.all.TextBox4.value--;   
+                  setTimeout("NumberInc3()",100);   
+              }   
+      }   
+  }   
+    
+  function   md3(obj)   
+  {   
+    if(obj.id=="Button7")   flag7=1;   
+    if(obj.id=="Button8")   flag8=1;   
+    NumberInc3();   
+  }   
+    
+  function   mo3(obj)   
+  {   
+    if(obj.id=="Button7")   flag7=0;   
+    if(obj.id=="Button8")   flag8=0;   
+  } 
+      
+	 
+	   shan1.addEventListener('click',function(){
+		var shan1=document.getElementById('shan1');
+		var din1=document.getElementById('din1'); 
+		   din1.style.display='none';
+		   })
+	   shan2.addEventListener('click',function(){
+		  var shan2=document.getElementById('shan2');
+		  var din2=document.getElementById('din2');
+		  din2.style.display='none'; 
+		   })
+	   shan3.addEventListener('click',function(){
+		   var shan3=document.getElementById('shan3');
+		   var din3=document.getElementById('din3');
+		   din3.style.display='none';
+		   })
+		shan4.addEventListener('click',function(){
+			var shan4=document.getElementById('shan4');
+			var din4=document.getElementById('din4');
+			din4.style.display='none';
+			})
+	           
+        function previewImage(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+          var div = document.getElementById('preview');
+		  var chong=document.getElementById('chong');
+		  var tupian=document.getElementById('tupian');
+		   var din1=document.getElementById('din1');
+		   tupian.style.display='none';
+		  chong.style.display='block';
+		  din1.style.display='block';
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead>';
+              var img = document.getElementById('imghead');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+		
+		                  //图片上传预览    IE是用了滤镜。
+        function previewImage1(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+          var div = document.getElementById('preview1');
+		  var chong=document.getElementById('chong1');
+		  var tupian=document.getElementById('tupian1');
+		   var din2=document.getElementById('din2');
+		    var shan1=document.getElementById('shan1');
+		   tupian.style.display='none';
+		  chong.style.display='block';
+		  din2.style.display='block';
+		  shan1.style.display='block';
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead1>';
+              var img = document.getElementById('imghead1');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead1>';
+            var img = document.getElementById('imghead1');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+
+
+	 		                  //图片上传预览    IE是用了滤镜。
+        function previewImage2(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+          var div = document.getElementById('preview2');
+		  var chong=document.getElementById('chong2');
+		  var tupian=document.getElementById('tupian2');
+		   var din3=document.getElementById('din3');
+		   var shan2=document.getElementById('shan2');
+		   tupian.style.display='none';
+		   shan2.style.display='block';
+		  chong.style.display='block';
+		  din3.style.display='block';
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead2>';
+              var img = document.getElementById('imghead2');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead2>';
+            var img = document.getElementById('imghead2');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+		
+				                  //图片上传预览    IE是用了滤镜。
+        function previewImage3(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+          var div = document.getElementById('preview3');
+		  var chong=document.getElementById('chong3');
+		  var tupian=document.getElementById('tupian3');
+		   var din4=document.getElementById('din4');
+		   var shan3=document.getElementById('shan3');
+		   tupian.style.display='none';
+		  chong.style.display='block';
+		  shan3.style.display='block';
+		  din4.style.display='block';
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead3>';
+              var img = document.getElementById('imghead3');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead3>';
+            var img = document.getElementById('imghead3');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+		
+		
+				                  //图片上传预览    IE是用了滤镜。
+        function previewImage4(file)
+        {
+		  
+          var MAXWIDTH  = 50; 
+          var MAXHEIGHT = 50;
+          var div = document.getElementById('preview4');
+		  var chong=document.getElementById('chong4');
+		  var tupian=document.getElementById('tupian4');
+		  var shan4=document.getElementById('shan4');
+		   tupian.style.display='none';
+		  chong.style.display='block';
+		  shan4.style.display='block';
+		  
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead4>';
+              var img = document.getElementById('imghead4');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead4>';
+            var img = document.getElementById('imghead4');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                 
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+             
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<div class="contentArea">
+    <div class="Item hr">
+        <div class="current">编辑/升级代理商</div>
+    </div>
+    <form>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+            <tr>
+                <th width="80">姓名：</th>
+                <td><input name="name" type="text" class="input" size="30" readonly="readonly" style="color:gray;" value="{$edit.name}"/></td>
+            </tr>
+            <tr>
+                <th width="80">对接人：</th>
+                <td>
+                    <select name="people">
+                    <volist name="edit.people" id="people">
+                    <!-- <option value="{$people.id}" <if condition="$people.id eq $edit.checkman"> selected <else /> </if> >{$people.id}{$edit.checkman}{$people.remark}</option> -->
+                    <option value="{$people.id}" <php>if($people['id'] == $edit['checkman']){ echo 'selected'; }else{ }</php> >{$people.id}{$edit.checkman}{$people.remark}</option>
+                    </volist>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th width="80">代理级别：</th>
+                <td><select name="level">
+                    <option value="1" <if condition="$edit.agent_level eq 1"> selected <else /> </if> >总代理</option>
+                    <option value="2" <if condition="$edit.agent_level eq 2"> selected <else /> </if> >一级代理</option>
+                    <option value="3" <if condition="$edit.agent_level eq 3"> selected <else /> </if> >二级代理</option>
+                    <option value="4" <if condition="$edit.agent_level eq 4"> selected <else /> </if> >特约代理</option></select>
+                </td>
+            </tr>
+            <tr>
+                <th width="80">身份证：</th>
+                <td><input class="input" name="idcode" type="text" size="30" value="{$edit.idcode}"/>&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">上级：</th>
+                <td><input class="input" name="fid" type="text" size="30" readonly="readonly" style="color:gray;" value="{$edit.fid}"/></td>
+            </tr>
+            <tr>
+                <th width="80">手机号：</th>
+                <td><input class="input" name="tel" type="text" size="30" value="{$edit.tel}"/>&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">微信：</th>
+                <td><input class="input" name="wechat" type="text" size="30" value="{$edit.wechat}"/>&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">地址：</th>
+                <td><input class="input" name="address" type="text" size="30" value="{$edit.address}"/>&nbsp;&nbsp;<font color="red">*</font></td>
+            </tr>
+            <tr>
+                <th width="80">备注：</th>
+                <td><textarea class="jq_watermark" rows = "5" cols="68" name="note" placeholder="{$edit.note}">{$edit.note}</textarea></td>
+            </tr>
+        </table>
+    </form>
+    <div class="commonBtnArea" >
+        <button class="btn submit">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">*为必填项</font>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(".submit").click(function(){
+    commonAjaxSubmit("{:U('Agent/update',array('id'=>$edit['id']))}");
+    return false;
+});
+</script>
